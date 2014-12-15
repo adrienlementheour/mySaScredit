@@ -63,6 +63,25 @@ a{
   }
 }
 
+section{
+  overflow: hidden;
+}
+
+.btn{
+  text-transform: uppercase;
+  color: @blanc;
+  background: @bleu;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 7px;
+  .latoBold(1em);
+  letter-spacing: 1px;
+  float: right;
+}
+.btnO{
+  background: @orange;
+}
+
 h1, .h1{
   color: @rouge;
   text-transform: uppercase;
@@ -82,17 +101,20 @@ h2, .h2{
 
 .content{
   margin: 40px;
-  .main{
-    width: 605px;
-    padding: 0 0 0 20px;
-    display: inline-block;
-  }
-  aside{
-    width: 295px;
-    margin: 0 0 0 40px;
-    display: inline-block;
-    vertical-align: top;
-  }
+}
+.main{
+  width: 605px;
+  padding: 0 0 10px 20px;
+  display: inline-block;
+  border-bottom: @border 1px solid;
+}
+aside{
+  width: 295px;
+  margin: 0 0 0 40px;
+  padding: 0 0 10px;
+  display: inline-block;
+  vertical-align: top;
+  border-bottom: @border 1px solid;
 }
 
 .orange{
@@ -106,11 +128,6 @@ h2, .h2{
   height: 123px;
   background: url(../layoutImg/logo.jpg) no-repeat 0 100%;
   margin: 0 10px 0 0;
-  /*.transition(height .4s ease-in-out);*/
-  &:hover, &:focus{
-    /*height: 140px;
-    .transition(height .2s ease-in-out);*/
-  }
 }
 
 header{
@@ -124,19 +141,15 @@ header{
     margin: 0 0 0 25px;
     a{
       text-transform: uppercase;
-      .latoBold(0.9em);
+      .encodeBold(0.9em);
       color: @bleu;
       padding: 8px 2px;
       .transition(all .4s ease-in-out);
-      &:hover, &:focus{
-        color: @orange;
-        border-bottom: 5px solid;
-        text-decoration: none;
-        .transition(all .2s ease-in-out);
-      }
-      &.actif{
+      &:hover, &:focus, &.actif{
         color: @orange;
         border-bottom: 5px solid @rouge;
+        text-decoration: none;
+        .transition(all .2s ease-in-out);
       }
     }
   }
@@ -149,17 +162,29 @@ footer{
 }
 
 
-.pres{
+.home{
   h1{
     color: @bleu;
     text-transform: uppercase;
-    .encodeBold(3.2em);
+    .encodeSBold(3.2em);
     border: 0;
     padding: 80px 0 0;
     margin: 0;
   }
   p{
-    .encode(1.05em);
+    .latoBold(1.05em);
+  }
+}
+
+.mosaique{
+  img{
+    vertical-align: top;
+  }
+  .mos1{
+    padding: 0 9px 9px 0;
+  }
+  .mos3{
+    padding: 0 9px 0 0;
   }
 }
 

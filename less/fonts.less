@@ -1,14 +1,4 @@
-@font-face {
-    font-family: 'crimson';
-    src: url('../font/crimson/crimson-roman-webfont.eot');
-    src: url('../font/crimson/crimson-roman-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/crimson/crimson-roman-webfont.woff') format('woff'),
-         url('../font/crimson/crimson-roman-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
+/*@font-face {
     font-family: 'encode';
     src: url('../font/encode/encodesans-regular-webfont.eot');
     src: url('../font/encode/encodesans-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -18,7 +8,7 @@
          url('../font/encode/encodesans-regular-webfont.svg#encode_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 @font-face {
     font-family: 'encodeBold';
@@ -33,6 +23,18 @@
 }
 
 @font-face {
+    font-family: 'encodeSBold';
+    src: url('../font/encode/encodesanswide-semibold-webfont.eot');
+    src: url('../font/encode/encodesanswide-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/encode/encodesanswide-semibold-webfont.woff2') format('woff2'),
+         url('../font/encode/encodesanswide-semibold-webfont.woff') format('woff'),
+         url('../font/encode/encodesanswide-semibold-webfont.ttf') format('truetype'),
+         url('../font/encode/encodesanswide-semibold-webfont.svg#encode_sans_widesemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@font-face {
     font-family: 'encodeMedium';
     src: url('../font/encode/encodesanswide-medium-webfont.eot');
     src: url('../font/encode/encodesanswide-medium-webfont.eot?#iefix') format('embedded-opentype'),
@@ -42,8 +44,7 @@
          url('../font/encode/encodesanswide-medium-webfont.svg#encode_sans_widemedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
-}
+}*/
 
 @font-face {
   font-family: 'lato';
@@ -65,18 +66,17 @@
        url('../font/lato/Lato-Bol.svg#eea591db52cf6ebc8992abb7621b9256') format('svg');
   font-style: normal;
   font-weight: normal;
-
 }
 
-.crimson(@size){
+/*.crimson(@size){
   font-family: 'crimson', sans-serif;
   font-weight: normal;
   font-size: @size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
 
-.encode(@size){
+/*.encode(@size){
   font-family: 'encode', sans-serif;
   font-weight: normal;
   font-size: @size;
@@ -86,6 +86,14 @@
 
 .encodeMedium(@size){
   font-family: 'encodeMedium', sans-serif;
+  font-weight: normal;
+  font-size: @size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}*/
+
+.encodeSBold(@size){
+  font-family: 'encodeSBold', sans-serif;
   font-weight: normal;
   font-size: @size;
   -webkit-font-smoothing: antialiased;
