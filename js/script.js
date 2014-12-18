@@ -118,6 +118,21 @@ function animMosaique(){
 }
 
 
+/**** Ouverture des blocs partenaires ****/
+
+function openPartners(){
+
+    $('.part').click(function(){
+
+        var parent = $(this).parent('li');
+
+        $('#bgPart').html(parent.html()).addClass('open');
+        parent.addClass('hid').siblings('li').removeClass('hid');
+
+        return false;
+    });
+}
+
 
 
 $(function(){
@@ -127,6 +142,10 @@ $(function(){
     if($('body').hasClass('home')){ 
         animTxt(); 
         animMosaique();
+    }
+
+    if($('body').find('.part')){
+        openPartners();
     }
 
 });

@@ -10,13 +10,16 @@
 @blanc: #fff;
 @noir: #000;
 @orange: #f08c05;
+@orangeTitre: #e14d07;
 @bleu: #011745;
 @rouge: #e64314;
 @rougePale: #f2a189;
 @txt: #343434;
 @border: #9c9e9f;
+@borderLigth: #dcdcdc;
 @grisFooter: #9f9f9f;
 @grisLien: #797979;
+@grisFond: #fcfcfc;
 
 /* @end */
 
@@ -131,12 +134,31 @@ a{
 }
 
 h1, .h1{
-  color: @rouge;
+  color: @orangeTitre;
   text-transform: uppercase;
-  .encodeBold(1em);
+  .encodeBold(1.4em);
   border-bottom: 1px solid @border;
-  padding: 30px 0 5px; 
+  padding: 30px 0 0;
+  margin-left: 20px;
 }
+.h1{
+  padding: 30px 0 5px; 
+  font-size: 1em;
+  margin-left: 0;
+  &.icon-enveloppe{
+    position: relative;
+    margin: 15px 0 20px 40px;
+    &:before{
+      font-family: 'icomoon';
+      color: @rougePale;
+      position: absolute;
+      left: -40px;
+      top: 14px;
+      font-size: 50px;
+    }
+  }
+}
+
 h2, .h2{
   color: @txt;
   .encodeBold(1.5em);
@@ -309,18 +331,53 @@ footer{
   }
 }
 
-.h1{
-  &.icon-enveloppe{
-    position: relative;
-    margin: 15px 0 20px 40px;
-    &:before{
-      font-family: 'icomoon';
-      color: @rougePale;
-      position: absolute;
-      left: -40px;
-      top: 14px;
-      font-size: 50px;
+
+.partenaires{
+  list-style: none;
+  padding: 10px 0 0;
+  overflow: hidden;
+  li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 20px 20px;
+    .size(215px);
+    background: @grisFond;
+    text-align: center;
+    border: 1px solid @borderLigth;
+    &.vide{
+      .size(0);
+      margin: 0;
+      border: 0;
+      float: left;
+      &.open{
+        margin: 0 0 0 20px;
+        border: 1px solid @borderLigth;
+        width: 461px;
+        height: 451px;
+        .btn{
+          display: inline-block;
+        }
+        span{
+          display: block;
+        }
+      }
     }
+  }
+  .hid{
+    display: none;
+  }
+  .part{
+    display: block;
+    .size(215px);
+  }
+  .btn{
+    float: none;
+    display: none;
+  }
+  span{
+    display: none;
+  }
+  img{
   }
 }
 
@@ -372,8 +429,7 @@ footer{
 
 /* masqué */
 .hidden {
-    display: none !important;
-    visibility: hidden;
+    display: none;
 }
 
 /* masqué juste sur l'écran (pas sur RSS ou moteurs) */
@@ -591,20 +647,20 @@ footer{
 
 
 
-@media (max-height: 600px) {
+@media (max-height: 600px) and (max-width: 979px){
   header ul{
     top: 140px;
     margin-top: 0;
   }
 }
 
-@media (max-height: 515px) {
+@media (max-height: 515px) and (max-width: 979px){
   header li{
     margin: 0 0 20px;
   }
 }
 
-@media (max-height: 430px) {
+@media (max-height: 430px) and (max-width: 979px){
   header {
     ul{
       margin-left: -75px;
