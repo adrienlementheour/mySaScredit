@@ -2,6 +2,7 @@ var rand, newImg,
     div = 0, 
     imgVisible = [], 
     img = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    $container;
 
 
 /**** Animation du menu responsive ****/
@@ -122,13 +123,15 @@ function animMosaique(){
 
 function openPartners(){
 
-    $('.part').click(function(){
+    $container.on( 'click', '.part', function(event) {
+        $(this).siblings().removeClass('open');
+        $(this).addClass('open');
+        $container.packery();
+    });
 
-        var parent = $(this).parent('li');
-
-        $('#bgPart').html(parent.html()).addClass('open');
-        parent.addClass('hid').siblings('li').removeClass('hid');
-
+    $('.icon-close').click(function(){
+        $(this).parent('.part').removeClass('open');
+        $container.packery();
         return false;
     });
 }
@@ -144,7 +147,12 @@ $(function(){
         animMosaique();
     }
 
-    if($('body').find('.part')){
+    if($('body').find('#part')){
+        $container = $('#part');
+        $container.packery({
+            itemSelector: '.part'
+        });
+
         openPartners();
     }
 

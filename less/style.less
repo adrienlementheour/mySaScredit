@@ -335,40 +335,40 @@ footer{
 .partenaires{
   list-style: none;
   padding: 10px 0 0;
-  overflow: hidden;
   li{
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 0 20px 20px;
-    .size(215px);
-    background: @grisFond;
+    line-height: 215px;
     text-align: center;
+    .size(221px);
+    background: @grisFond;
     border: 1px solid @borderLigth;
-    &.vide{
-      .size(0);
-      margin: 0;
-      border: 0;
-      float: left;
-      &.open{
-        margin: 0 0 0 20px;
-        border: 1px solid @borderLigth;
-        width: 461px;
-        height: 451px;
-        .btn{
-          display: inline-block;
-        }
-        span{
-          display: block;
-        }
+    .box-sizing(border-box);
+    cursor: pointer;
+    margin: 0 0 19px 19px;
+    &.open, .no-js &{
+      .size(460px);
+      padding: 22px 25px;
+      text-align: left;
+      line-height: 18px;
+      .btn{
+        display: inline-block;
       }
+      span{
+        display: block;
+        margin: 50px 0 25px;
+        width: 300px;
+      }
+      .icon-close{
+        display: block;
+      }
+    }
+    .no-js &{
+      display: inline-block;
+      vertical-align: top;
+      cursor: auto;
     }
   }
   .hid{
-    display: none;
-  }
-  .part{
-    display: block;
-    .size(215px);
+    opacity: 0;
   }
   .btn{
     float: none;
@@ -377,7 +377,18 @@ footer{
   span{
     display: none;
   }
-  img{
+  .icon-close{
+    position: absolute;
+    color: @bleu;
+    top: 12px;
+    right: 23px;
+    font-size: 50px;
+    border: 0;
+    display: none;
+    &:hover, &:focus{
+      .transform(rotate(180deg));
+      color: @orange;
+    }
   }
 }
 
@@ -615,6 +626,22 @@ footer{
 
 }
 
+@media (max-width: 515px) {
+
+  .partenaires{
+    li{
+      &.open, .no-js &{
+        width: 94%;
+        height: auto;
+        span{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
+
 @media (max-width: 460px) {
   .main, aside, .aside, .main.border, .aside.border, aside.border{
     width: 280px;
@@ -643,6 +670,20 @@ footer{
       width: 135px;
     }
   }
+}
+
+@media (max-width: 330px) {
+
+  .partenaires{
+    li{
+      &.open{
+        img{
+          padding-top: 50px;
+        }
+      }
+    }
+  }
+
 }
 
 
