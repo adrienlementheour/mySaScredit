@@ -2,13 +2,12 @@ var rand, newImg,
     div = 0, 
     imgVisible = [], 
     img = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    $container;
 
 
 /**** Animation du menu responsive ****/
 
 function setBurgerMenu(){
-    if( $(window).width() < 980 ){
+    if( $('#burger').css('display') !== 'none' ){
 
         $('#burger').click(function(){
             $('#menu').toggleClass('down');
@@ -63,14 +62,10 @@ TxtType.prototype.tick = function() {
 
 function animTxt(){
     var txt = $('#typewrite');
-    for (var i=0; i<txt.length; i++) {
-        var toRotate = txt[i].getAttribute('data-type');
-        var period = txt[i].getAttribute('data-period');
+    var toRotate = txt[0].getAttribute('data-type');
+    var period = txt[0].getAttribute('data-period');
            
-        if (toRotate) {
-            new TxtType(txt[i], jQuery.parseJSON(toRotate), period);
-        }
-    }
+    if (toRotate) new TxtType(txt[0], jQuery.parseJSON(toRotate), period);
 }
 
 
@@ -119,19 +114,17 @@ function animMosaique(){
 }
 
 
-/**** Ouverture des blocs partenaires ****/
+/**** Ouverture des blocs partenaires, références, cartographie ****/
 
 function openPartners(){
-
-    $container.on( 'click', '.part', function(event) {
-        $(this).siblings().removeClass('open');
-        $(this).addClass('open');
-        $container.packery();
+    $('.packery').packery({ itemSelector: '.part' }).on( 'click', '.part', function(){
+        $(this).addClass('open').siblings().removeClass('open');
+        $('.packery').packery();
     });
 
     $('.icon-close').click(function(){
         $(this).parent('.part').removeClass('open');
-        $container.packery();
+        $('.packery').packery();
         return false;
     });
 }
@@ -147,19 +140,12 @@ $(function(){
         animMosaique();
     }
 
-    if($('body').find('#part')){
-        $container = $('#part');
-        $container.packery({
-            itemSelector: '.part'
-        });
-
+    if($('.packery').length){
         openPartners();
     }
 
 });
 
 $(window).resize(function() {
-
     setBurgerMenu();
-
 });

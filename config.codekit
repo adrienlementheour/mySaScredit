@@ -11,7 +11,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-114x114.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-120x120.png": {
 		"fileType": 32768,
@@ -22,7 +22,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-120x120.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-144x144.png": {
 		"fileType": 32768,
@@ -33,7 +33,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-144x144.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-152x152.png": {
 		"fileType": 32768,
@@ -44,7 +44,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-152x152.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-57x57.png": {
 		"fileType": 32768,
@@ -55,7 +55,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-57x57.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-60x60.png": {
 		"fileType": 32768,
@@ -66,7 +66,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-60x60.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-72x72.png": {
 		"fileType": 32768,
@@ -77,7 +77,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-72x72.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-76x76.png": {
 		"fileType": 32768,
@@ -88,7 +88,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-76x76.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon-precomposed.png": {
 		"fileType": 32768,
@@ -99,7 +99,7 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon-precomposed.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/apple-touch-icon.png": {
 		"fileType": 32768,
@@ -110,7 +110,25 @@
 		"outputAbbreviatedPath": "\/apple-touch-icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
+		},
+	"\/apropos.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/apropos.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/cartographie.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/cartographie.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/css\/libs\/ie6.css": {
 		"fileType": 16,
@@ -148,7 +166,7 @@
 		"outputAbbreviatedPath": "\/favicon-160x160.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/favicon-16x16.png": {
 		"fileType": 32768,
@@ -159,7 +177,7 @@
 		"outputAbbreviatedPath": "\/favicon-16x16.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/favicon-196x196.png": {
 		"fileType": 32768,
@@ -170,7 +188,7 @@
 		"outputAbbreviatedPath": "\/favicon-196x196.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/favicon-32x32.png": {
 		"fileType": 32768,
@@ -181,7 +199,7 @@
 		"outputAbbreviatedPath": "\/favicon-32x32.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/favicon-96x96.png": {
 		"fileType": 32768,
@@ -192,70 +210,7 @@
 		"outputAbbreviatedPath": "\/favicon-96x96.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/font\/crimson\/crimson-bold-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/crimson\/crimson-bold-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/font\/crimson\/crimson-bolditalic-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/crimson\/crimson-bolditalic-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/font\/crimson\/crimson-italic-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/crimson\/crimson-italic-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/font\/crimson\/crimson-roman-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/crimson\/crimson-roman-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/font\/crimson\/crimson-semibold-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/crimson\/crimson-semibold-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/font\/crimson\/crimson-semibolditalic-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/crimson\/crimson-semibolditalic-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/font\/encode\/encodesanswide-bold-demo.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/font\/encode\/encodesanswide-bold-demo.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"processed": 1
 		},
 	"\/index.html": {
 		"fileType": 8192,
@@ -552,6 +507,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/libs\/packery.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/libs\/packery.min.js",
+		"outputAbbreviatedPath": "\/js\/libs\/min\/packery.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/min\/script-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -585,16 +551,214 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/layoutImg\/logo.jpg": {
+	"\/layoutImg\/about\/clavier.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 22524,
-		"inputAbbreviatedPath": "\/layoutImg\/logo.jpg",
-		"outputAbbreviatedPath": "\/layoutImg\/logo.jpg",
+		"initialSize": 19189,
+		"inputAbbreviatedPath": "\/layoutImg\/about\/clavier.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/about\/clavier.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
+		},
+	"\/layoutImg\/about\/graph.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 36249,
+		"inputAbbreviatedPath": "\/layoutImg\/about\/graph.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/about\/graph.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/about\/mob.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38161,
+		"inputAbbreviatedPath": "\/layoutImg\/about\/mob.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/about\/mob.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/about\/tab.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42676,
+		"inputAbbreviatedPath": "\/layoutImg\/about\/tab.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/about\/tab.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/about\/use.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27625,
+		"inputAbbreviatedPath": "\/layoutImg\/about\/use.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/about\/use.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20469,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos1.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17413,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos2.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24686,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos3.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25317,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos4.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21549,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos5.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos6.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 33337,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos6.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos6.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos7.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16242,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos7.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos7.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos8.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19528,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos8.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos8.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/home\/mos9.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22719,
+		"inputAbbreviatedPath": "\/layoutImg\/home\/mos9.jpg",
+		"outputAbbreviatedPath": "\/layoutImg\/home\/mos9.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30446,
+		"inputAbbreviatedPath": "\/layoutImg\/logo.png",
+		"outputAbbreviatedPath": "\/layoutImg\/logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/partenaires\/business.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24767,
+		"inputAbbreviatedPath": "\/layoutImg\/partenaires\/business.png",
+		"outputAbbreviatedPath": "\/layoutImg\/partenaires\/business.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/partenaires\/ibm.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13829,
+		"inputAbbreviatedPath": "\/layoutImg\/partenaires\/ibm.png",
+		"outputAbbreviatedPath": "\/layoutImg\/partenaires\/ibm.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/partenaires\/oceanet.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7205,
+		"inputAbbreviatedPath": "\/layoutImg\/partenaires\/oceanet.png",
+		"outputAbbreviatedPath": "\/layoutImg\/partenaires\/oceanet.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
+	"\/layoutImg\/partenaires\/ofi.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10024,
+		"inputAbbreviatedPath": "\/layoutImg\/partenaires\/ofi.png",
+		"outputAbbreviatedPath": "\/layoutImg\/partenaires\/ofi.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
 		},
 	"\/less\/fonts.less": {
 		"allowInsecureImports": 0,
@@ -665,7 +829,7 @@
 		"outputAbbreviatedPath": "\/mstile-144x144.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/mstile-150x150.png": {
 		"fileType": 32768,
@@ -676,7 +840,7 @@
 		"outputAbbreviatedPath": "\/mstile-150x150.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/mstile-310x150.png": {
 		"fileType": 32768,
@@ -687,7 +851,7 @@
 		"outputAbbreviatedPath": "\/mstile-310x150.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/mstile-310x310.png": {
 		"fileType": 32768,
@@ -698,7 +862,7 @@
 		"outputAbbreviatedPath": "\/mstile-310x310.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/mstile-70x70.png": {
 		"fileType": 32768,
@@ -709,7 +873,37 @@
 		"outputAbbreviatedPath": "\/mstile-70x70.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
+		},
+	"\/partenaires.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/partenaires.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/README.md": {
+		"enableFootnoteSupport": 0,
+		"enableSmartyPants": 1,
+		"expandTabs": 1,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/README.md",
+		"outputAbbreviatedPath": "\/README.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/references.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/references.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
