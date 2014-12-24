@@ -130,6 +130,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/contact.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/contact.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/libs\/ie6.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -760,6 +769,94 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
+	"\/layoutImg\/saas\/devices.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6795,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/devices.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/devices.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/devices_mob.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6700,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/devices_mob.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/devices_mob.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/prescripteur.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3094,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/prescripteur.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/prescripteur.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/securite.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 47291,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/securite.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/securite.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/serrure.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2051,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/serrure.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/serrure.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/smallDevices.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2671,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/smallDevices.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/smallDevices.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/smallDevices_mob.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2584,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/smallDevices_mob.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/smallDevices_mob.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/layoutImg\/saas\/utilisateur.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2870,
+		"inputAbbreviatedPath": "\/layoutImg\/saas\/utilisateur.png",
+		"outputAbbreviatedPath": "\/layoutImg\/saas\/utilisateur.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/less\/fonts.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -904,6 +1001,15 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/saas.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/saas.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
@@ -918,7 +1024,7 @@
 	"iconImageName": "\/apple-touch-icon.png"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",

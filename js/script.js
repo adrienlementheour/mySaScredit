@@ -1,11 +1,29 @@
-var rand, newImg, 
+///**** VARIABLES ****///
+
+var rand, newImg, myScroll,
     div = 0, 
     imgVisible = [], 
-    img = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    img = [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    firstOpen = false,
+    onglets = $('#avantages').find('.avantages > li');
 
+
+
+///**** FONCTIONS GENERIQUES ****///
+
+/**** Tester si un élément est visible dans la fenetre ****/
+function isVisible(elt){
+    var botView = myScroll + $(window).height();
+    var topElt = elt.offset().top;
+    var botElt = topElt + $(elt).height();
+    return ((botElt <= botView) && (topElt >= myScroll));
+}
+
+
+
+///**** FONCTIONS SPECIFIQUES ****///
 
 /**** Animation du menu responsive ****/
-
 function setBurgerMenu(){
     if( $('#burger').css('display') !== 'none' ){
 
@@ -19,8 +37,8 @@ function setBurgerMenu(){
     }
 }
 
-/**** Animation du texte en page d'accueil ****/
 
+/**** Animation du texte en page d'accueil ****/
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -35,25 +53,19 @@ TxtType.prototype.tick = function() {
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
 
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    this.txt = this.isDeleting ? fullTxt.substring(0, this.txt.length - 1) : fullTxt.substring(0, this.txt.length + 1);
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
     var that = this;
     var delta = 200 - Math.random() * 100;
-
-    if (this.isDeleting) { delta /= 2; }
+    if (this.isDeleting) delta /= 2;
 
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
         this.isDeleting = true;
     } else if (this.isDeleting && this.txt === '') {
         this.isDeleting = false;
-        this.loopNum++;
+        this.loopNum ++;
         delta = 500;
     }
 
@@ -69,9 +81,7 @@ function animTxt(){
 }
 
 
-
 /**** Animation de la mosaique en page d'accueil ****/
-
 function animMosaique(){
     
     function animImg(div){
@@ -115,7 +125,6 @@ function animMosaique(){
 
 
 /**** Ouverture des blocs partenaires, références, cartographie ****/
-
 function openPartners(){
     $('.packery').packery({ itemSelector: '.part' }).on( 'click', '.part', function(){
         $(this).addClass('open').siblings().removeClass('open');
@@ -130,6 +139,48 @@ function openPartners(){
 }
 
 
+/**** Apparition du détail des avantages page Saas ****/
+function appearDetail(first){
+    firstOpen = true;
+    var that = first !== 0 ? $(this) : onglets.eq(0);
+    var classe = first !== 0 ? 'a' + $(this).index() : 'a' + 0;
+    var classeDetail = $('#detail').attr('class');
+
+    //if($('html').hasClass('lt-ie9')){ onglets.removeClass('on'); }
+
+    that.addClass('on').siblings().removeClass('on');
+    var content = that.find('div').clone();
+
+    $('#detail').removeClass().stop();
+    if(classe !== classeDetail) $('#detail').slideUp(300, function(){ $(this).html(content).slideDown(300).addClass(classe); });
+
+    if(first !== 0 && !$('html').hasClass('lt-ie9')){
+        $('#avantages').mouseleave(function(){
+            onglets.removeClass('on');
+            $('#detail').removeClass().stop().slideUp();
+        });
+    }
+    
+}
+
+/**** Apparition du détail des avantages page Saas en accordéon pour smartphone ****/
+function appearDetailAccordion(first){
+    firstOpen = true;
+    var that = first !== 0 ? $(this) : onglets.eq(0);
+
+    if(that.hasClass('on')){
+        that.removeClass('on').find('div').slideUp(300);
+    }else{
+        that.addClass('on').siblings().removeClass('on').find('div').slideUp(300);
+        that.find('div').slideDown(300); 
+    }   
+
+    return false;
+}
+
+
+
+///**** INIT ****///
 
 $(function(){
     
@@ -140,11 +191,22 @@ $(function(){
         animMosaique();
     }
 
-    if($('.packery').length){
-        openPartners();
-    }
+    if($('.packery').length) openPartners();
+
+    if($('#detail').length){
+        var events = $('html').hasClass('lt-ie9') ? 'click' : 'mouseenter click';
+        $(window).width() > 720 ? onglets.on(events, appearDetail) : onglets.on('click', appearDetailAccordion);
+    } 
+
+    $(document).scroll(function() {
+        myScroll = $(this).scrollTop();
+        if($('#detail').length && isVisible($('.avantages')) && firstOpen === false) {
+            $(window).width() > 720 ? appearDetail(0) : appearDetailAccordion(0);
+        }
+    });
 
 });
+
 
 $(window).resize(function() {
     setBurgerMenu();

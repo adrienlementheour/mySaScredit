@@ -13,6 +13,7 @@
 @orangeTitre: #e14d07;
 @bleu: #011745;
 @bleuPale: #7089bd;
+@bleuSaas: #83d0f6;
 @rouge: #e64314;
 @rougePale: #f2a189;
 @txt: #343434;
@@ -21,6 +22,7 @@
 @grisFooter: #9f9f9f;
 @grisLien: #797979;
 @grisFond: #fcfcfc;
+@grisFonce: #4c5361;
 
 /* @end */
 
@@ -36,10 +38,10 @@ textarea {
 hr {
     display: block;
     height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
+    border: 0;
+    border-top: 1px solid #ccc;
 }
 img {
     vertical-align: middle;
@@ -49,9 +51,9 @@ img {
     }
 }
 fieldset {
-    border: 0;
     margin: 0;
     padding: 0;
+    border: 0;
 }
 textarea {
     resize: vertical;
@@ -66,16 +68,18 @@ body{
   color: @txt;
 }
 
+/* Liens et boutons */
+
 a{
-  color: @orange;
-  text-decoration: none;
   border-bottom: transparent 1px solid;
+  text-decoration: none;
+  color: @orange;
   .transition(.4s ease-in-out);
   &:hover, &:focus{
     color: @rouge;
     border-color: @rouge;
-    .transition(.2s ease-in-out);
     outline: 0;
+    .transition(.2s ease-in-out);
   }
   &:active{
     opacity: 0.7;
@@ -83,19 +87,19 @@ a{
 }
 
 .btn{
+  display: inline-block;
   position: relative;
+  padding: 10px 20px 10px 30px;
+  border: 0;
+  background: @bleu;
+  .latoBold(1em);
   text-transform: uppercase;
   color: @blanc;
-  background: @bleu;
-  display: inline-block;
-  padding: 10px 20px 10px 30px;
-  border-radius: 7px;
-  .latoBold(1em);
   letter-spacing: 1px;
-  border: 0;
+  border-radius: 7px;
   &:hover, &:focus{
-    color: @blanc;
     background: @rouge;
+    color: @blanc;
     &:before{
       left: 20px;
       .transition(left .2s ease-in-out);
@@ -104,9 +108,9 @@ a{
   &:before{
     content: '›';
     position: absolute;
-    left: 15px;
-    top: 50%;
     margin-top: -13px;
+    top: 50%;
+    left: 15px;
     font-size: 1.5em;
     .transition(left .4s ease-in-out);
   }
@@ -119,12 +123,11 @@ a{
 }
 
 .lien{
-  .latoIt(1.7em);
-  border-bottom: 1px solid; 
-  float: right;
   position: relative;
   margin: 5px 0 10px;
   padding: 0 5px 0 0;
+  border-bottom: 1px solid; 
+  .latoIt(1.4em);
   &:before{
     content: '›';
     position: absolute;
@@ -140,39 +143,59 @@ a{
   }
 }
 
+.icon-close{
+  position: absolute;
+  border: 0;
+  &:hover, &:focus{
+    .transform(rotate(180deg));
+    color: @rouge;
+  }
+}
+
+
+/* Styles génériques */
+
 h1, .h1{
+  padding: 30px 0 0;
+  border-bottom: 1px solid @border;
+  .encodeBold(1.4em);
   color: @orangeTitre;
   text-transform: uppercase;
-  .encodeBold(1.4em);
-  border-bottom: 1px solid @border;
-  padding: 30px 0 0;
 }
 .smallH1{
   padding: 30px 0 5px; 
   font-size: 1em;
-  &.icon-enveloppe{
+  &.icon-enveloppe, &.icon-map{
     position: relative;
     margin: 15px 0 20px 40px;
     &:before{
-      font-family: 'icomoon';
-      color: @rougePale;
       position: absolute;
-      left: -40px;
       top: 14px;
+      left: -40px;
+      font-family: 'icomoon';
       font-size: 50px;
+      color: @rougePale;    
+    }
+  }
+  &.icon-map{
+    margin-left: 36px;
+    color: @rouge;
+    &:before{
+      top: 17px;
+      font-size: 41px;
     }
   }
 }
 
 h2, .h2{
-  color: @txt;
   .encodeBold(1.5em);
+  color: @txt;
 }
 .h2Bleu{
-  text-transform: uppercase;
-  border-bottom: 1px solid @border;
   padding: 30px 0 10px 20px;
+  border-bottom: 1px solid @border;
   font-size: 1.15em;
+  text-transform: uppercase;
   color: @bleuPale;
 }
 
@@ -181,20 +204,10 @@ ul{
   li{
     &:before{
       content: '• ';
-      color: @rouge;
       font-size: 10px;
+      color: @rouge;
     }
   }
-}
-
-.fl{
-  float: left;
-}
-.w720{
-  width: 720px;
-}
-.w480{
-  width: 480px;
 }
 
 .bigP{
@@ -203,6 +216,9 @@ ul{
 .chapo{
   .latoBold(1.1em);
 }
+
+
+/* Blocs de contenu */
 
 .wrapper{
   width: 1040px;
@@ -218,63 +234,141 @@ ul{
   }
 }
 .main{
+  display: inline-block;
   width: 605px;
   padding: 0 0 0 20px;
-  display: inline-block;
   &.border{
     padding: 0 0 10px 20px;
     border-bottom: @border 1px solid;
   }
 }
 aside, .aside{
+  display: inline-block;
   width: 295px;
   margin: 0 0 0 40px;
-  display: inline-block;
   vertical-align: top;
   &.border{
     padding: 0 0 10px;
     border-bottom: @border 1px solid;
+  }
+  &.contact{
+    padding-bottom: 30px;
   }
 }
 section{
   margin: 0 0 20px 0;
 }
 
+.fl{
+  float: left;
+}
+.oh{
+  overflow: hidden;
+}
+.w720{
+  width: 720px;
+}
+.w480{
+  width: 480px;
+}
+
 .orange{
   color: @orange;
 }
 
-.oh{
-  overflow: hidden;
+
+/* Formulaires */
+
+form{
+  + p{
+    span{
+      color: @rouge;
+    }
+  }
 }
 
+fieldset{
+  display: inline-block;
+  &.w50{
+    width: 50%;
+  }
+  &.message{
+    display: block;
+  }
+}
+
+input, textarea{
+  display: block;
+  padding: 5px;
+  border: 1px solid @noir;
+  .lato(1em);
+  border-radius: 4px;
+  outline: 0;
+  .transition(border .2s ease-in-out);
+  &:focus{
+    border-color: @orange;
+    .transition(border .2s ease-in-out);
+  }
+}
+
+input{
+  &[type=text], &[type=email], &[type=tel]{
+    width: 266px;
+    height: 16px;
+  }
+}
+
+#nom, #tel{
+  width: 200px;
+}
+
+textarea{
+  width: 100%;
+  height: 150px;
+}
+
+select{
+  cursor: pointer;
+}
+
+label{
+  span{
+    color: @rouge;
+  }
+}
+
+
+/* Logo */
 
 #logo{
   display: inline-block;
+  position: relative;
   width: 148px;
   height: 123px;
-  background: url(../layoutImg/logo.png) no-repeat 0 100%;
   margin: 0 10px 0 0;
   border: 0;
-  position: relative;
   z-index: 2;
+  background: url(../layoutImg/logo.png) no-repeat 0 100%;
 }
 
+
+/* Burger responsive menu */
+
 #burger{
+  display: none;
   position: absolute;
+  top: 45px;
+  right: 20px;
+  z-index: 2;
+  border: 0;
   font-size: 1.2em;
   color: @bleu;
-  border: 0;
-  z-index: 2;
-  right: 20px;
-  top: 45px;
-  display: none;
   &:hover, &:focus{
     color: @orange;
     .btnBurger{
       span{
-        background: @orange;
         margin: 0 0 4px;
+        background: @orange;
         .transition(background .3s ease-in-out, margin .2s);
       }
     }
@@ -282,25 +376,28 @@ section{
 }
 .btnBurger{
   display: inline-block;
-  vertical-align: middle;
   margin: 0 0 0 10px;
+  vertical-align: middle;
   span{
     display: block;
-    height: 3px;
     width: 20px;
-    background: @bleu;
+    height: 3px;
     margin: 0 0 3px;
+    background: @bleu;
     border-radius: 10px;
     .transition(background .3s ease-in-out, margin .2s, transform .3s ease-in-out);
   }
 }
 
+
+/* Header */
+
 header{
   padding: 0 10px;
   .menu{
     display: inline-block;
-    vertical-align: top;
     padding: 25px 0 0;
+    vertical-align: top;
   }
   ul{
     display: inline-block;
@@ -314,18 +411,20 @@ header{
     }
   }
   a{
-    text-transform: uppercase;
-    .encodeBold(0.9em);
-    color: @bleu;
     padding: 8px 2px;
+    .encodeBold(0.9em);
+    text-transform: uppercase;
+    color: @bleu;
     .transition(.4s ease-in-out);
     &:hover, &:focus, &.actif{
-      color: @orange;
       border-bottom: 5px solid @rouge;
+      color: @orange;
       .transition(.2s ease-in-out);
     }
   }
 }
+
+/* Footer */
 
 footer{
   padding: 60px 20px 20px;
@@ -344,25 +443,33 @@ footer{
 }
 
 
+/* Page d'accueil */
+
 .home{
   h1{
-    color: @bleu;
-    text-transform: uppercase;
-    .encodeSBold(3.3em);
-    border: 0;
-    padding: 71px 0 0;
     margin: 0;
+    padding: 71px 0 0;
+    border: 0;
+    .encodeSBold(3.3em);
+    text-transform: uppercase;
+    color: @bleu;
+  }
+  .lien{
+    float: right;
+    font-size: 1.7em;
   }
 }
+
+/* Mosaique, page d'accueil, a propos et cartographie */
 
 .mosaique{
   vertical-align: bottom;
   div{
-    vertical-align: top;
-    position: relative;
     display: inline-block;
+    position: relative;
     width: 143px;
     height: 144px;
+    vertical-align: top;    
   }
   .mos1{
     margin: 0 9px 9px 0;
@@ -374,8 +481,8 @@ footer{
     position: absolute;
   }
   &.simple{
-    width: 199px;
     float: right;
+    width: 199px;
     margin: 40px 0 0;
     div{
       .size(92px);
@@ -398,16 +505,17 @@ footer{
   }
 }
 
+/* Packery, pages partenaires, references, cartographie */
 
 .packery{
   padding: 10px 0 0;
   > li{
-    color: @blanc;
-    text-align: center;
     .size(221px);
     .box-sizing(border-box);
-    cursor: pointer;
     margin: 0 0 19px 19px;
+    text-align: center;
+    color: @blanc;
+    cursor: pointer;
     &:hover{
       h3{
         &:before{
@@ -445,17 +553,17 @@ footer{
         display: block;
       }
       h3{
-        text-indent: 9px;
         margin: 0; 
+        text-indent: 9px;
         &:before{
-          .transform(rotate(90deg));
           margin: 0 0 0 -15px;
           padding: 0 10px 0 0;
+          .transform(rotate(90deg));
           .transition(.3s ease-in-out);
         }
         span{
-          margin: 0;
           width: auto;
+          margin: 0;
         }
       }
     }
@@ -463,49 +571,46 @@ footer{
       display: inline-block;
       vertical-align: top;
       cursor: auto;
+      .icon-close{
+        display: none;
+      }
     }
   }
   span, ul, .btn{
     display: none;
   }
   h3{
-    text-transform: uppercase;
-    .encodeBold(1em);
-    margin: 100px 0 0;
     display: inline-block;
+    margin: 100px 0 0;
+    .encodeBold(1em);
+    text-transform: uppercase;
     &:before{
       content: '▶ ';
       display: inline-block;
-      font-size: 9px;
       padding: 0 10px 0 0;
+      font-size: 9px;
       .transition(.3s ease-in-out);
     }
     span{
       display: block;
-      text-transform: none;
       .latoBold(1.1em);
       text-align: center;
+      text-transform: none;      
     }
   }
   .icon-close{
-    position: absolute;
+    display: none;
     top: 12px;
     right: 23px;
     font-size: 50px;
-    border: 0;
-    display: none;
     color: @blanc;
-    &:hover, &:focus{
-      .transform(rotate(180deg));
-      color: @rouge;
-    }
   }
   &.partenaires{
     li{
-      color: @txt;
-      background: @grisFond;
       border: 1px solid @borderLigth;
+      background: @grisFond;
       line-height: 215px;
+      color: @txt;
       &.open, .no-js &{
         line-height: 18px;
       }
@@ -524,8 +629,8 @@ footer{
   }
   &.fonctions{
     > li{
-      background: @orange;
       width: 173px;
+      background: @orange;
       &.open, .no-js &{
         width: 365px;
       }
@@ -533,16 +638,289 @@ footer{
   }
 }
 
+
+/* Schema page Saas */
+
+.schema{
+  position: relative;
+  height: 380px;
+  margin: 50px 0 0;
+  span{
+    display: inline-block;
+    width: 110px;
+    vertical-align: middle;
+    padding: 0 5px;
+    .encodeBold(1em);
+    text-align: center;
+    text-transform: uppercase;
+    color: @orange;
+  }
+}
+
+.elt{
+  position: absolute;
+}
+
+.securite{
+  top: 0;
+  right: 0;
+}
+.utilisateur{
+  top: 15px;
+  left: 0;
+  background: @blanc;
+}
+.prescripteur{
+  bottom: 61px;
+  left: 0;
+  background: @blanc;
+  span{
+    width: 135px;
+  }
+}
+.bulle{
+  top: 50px;
+  left: 50px;
+}
+.b1{
+  width: 343px;
+  height: 145px;
+  background: url(../layoutImg/saas/devices.png) no-repeat;
+}
+.b2{
+  width: 166px;
+  height: 72px;
+  background: url(../layoutImg/saas/smallDevices.png) no-repeat;
+}
+.serrure{
+  right: 205px;
+  .trait{
+    width: 60px;
+    .lt-ie9 &{
+      background: none;
+    }
+  }
+}
+.picto{
+  .size(42px);
+  z-index: 1;
+  background: url(../layoutImg/saas/serrure.png) no-repeat;
+}
+.s1{
+  top: 60px;
+  .picto{
+    top: -35px;
+    left: -25px;
+  }
+  .trait{
+    .transform(rotate(30deg));
+  }
+}
+.s2{
+  bottom: 65px;
+  .picto{
+    bottom: -46px;
+    left: -20px;
+  }
+  .trait{
+    .transform(rotate(-45deg));
+  }
+}
+.trait{
+  height: 10px;
+  background: @bleuSaas;
+}
+.t1{
+  width: 475px;
+  top: 40px;
+  right: 275px;
+}
+.t2{
+  width: 460px;
+  bottom: 86px;
+  right: 275px;
+}
+
+
+/* Liste avantages page Saas */
+
+.avantages{
+  padding: 0 0 40px;
+  > li{
+    display: inline-block;
+    cursor: pointer;
+    .transition(color .3s ease-in-out);
+    &:before{
+      vertical-align: middle;
+      font-size: 90px;
+      .transition(color .3s ease-in-out);
+    }
+    &:after{
+      content: ' ▾ ';
+      display: block;
+      position: absolute;
+      width: 160px;
+      height: 0;
+      background: @orangeTitre;
+      font-size: 0;
+      line-height: 0;
+      text-align: center;
+      color: @orangeTitre;
+      .transition(font-size .3s ease-in-out, height .3s ease-in-out .1s);
+      .lt-ie9 &{
+        content: ' ';
+      }
+    }
+    &.on, &:hover{
+      color: @orangeTitre;
+      .transition(color .3s ease-in-out);
+      &:before{
+        color: @orangeTitre;
+        .transition(color .3s ease-in-out);
+      }
+      &:after{
+        height: 6px;
+        font-size: 25px;
+        line-height: 11px;
+        .transition(height .3s ease-in-out, font-size .3s ease-in-out .1s);
+      }
+    }
+    .no-js &{
+      display: block;
+      width: 100%;
+      cursor: auto;
+      &:hover{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+  span{
+    display: inline-block;
+    width: 122px;
+    vertical-align: middle;
+    .encodeBold(0.9em);
+    line-height: 16px;
+    text-transform: uppercase;
+    .no-js &{
+      width: 70%;
+      br{
+        display: none;
+      }
+    }
+  }
+  .icon-serrure{
+    width: 220px;
+    &:before{
+      margin-left: -12px;
+      color: @bleuSaas;
+    }
+  }
+  .icon-globe{
+    width: 260px;
+    &:before{
+      color: @orange;
+    }
+    &:after{
+      width: 175px;
+      margin-left: 15px;
+    }
+  }
+  .icon-outil{
+    width: 260px;
+    &:before{
+      color: @grisFooter;
+    }
+    &:after{
+      width: 183px;
+      margin-left: 12px;
+    }
+  }
+  .icon-fleche{
+    width: 200px;
+    &:before{
+      color: @grisFonce;
+    }
+    &:after{
+      width: 166px;
+      margin-left: 6px;
+    }
+  }
+  div{
+    display: none;
+    margin: 10px 0 30px;
+    .lato(1.15em);
+    cursor: auto;
+    ul{
+      margin: 5px 0 0;
+      padding: 0 0 0 20px;
+      li{
+        &:before{
+          font-size: 15px;
+        }
+      }
+    }
+    .no-js &{
+      display: inline-block;
+    }
+  }
+  .icon-close{
+    display: none;
+    top: 30px;
+    right: 0;
+    font-size: 30px;
+    color: @orangeTitre;
+  }
+}
+
+#detail{
+  display: none;
+  .lato(1.15em);
+  color: @orangeTitre;
+  ul{
+    margin: 5px 0 0;
+    padding: 0 0 0 20px;
+    li{
+      &:before{
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+/* Page Contact */
+
+.adress{
+  margin-bottom: 30px;
+  text-align: center;
+  span{
+    color: @rouge;
+  }
+  + .lien{
+    margin-left: 55px;
+    .icon-enveloppe{
+      position: absolute;
+      top: -10px;
+      left: -58px;
+      font-size: 50px;
+      color: @rougePale;
+    }
+  }
+}
+
+
 /* @group General */
 
 /* selection */
 ::-moz-selection { 
-	background: @noir;  
+	background: @bleu;  
 	color: @blanc;
 	text-shadow: none; 
 }
 ::selection { 
-	background: @noir;  
+	background: @bleu;  
 	color: @blanc; 
 	text-shadow: none; 
 }
@@ -562,7 +940,6 @@ footer{
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    /* IE 6/7 fallback */
     *text-indent: -9999px;
 }
 .ir:before {
@@ -584,24 +961,11 @@ footer{
     display: none;
 }
 
-/* masqué juste sur l'écran (pas sur RSS ou moteurs) */
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
 /* clearfix */
-
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
 }
 .clearfix:after {
     clear: both;
@@ -658,9 +1022,9 @@ footer{
       margin: 0 0 0 20px;
     }
     &.simple{
+      float: none;
       width: auto;
       margin: 0;
-      float: none;
       padding: 10px 0 0 0;
       text-align: left;
       .mos1{
@@ -676,6 +1040,12 @@ footer{
     }
   }
 
+  .avantages{
+    .icon-serrure, .icon-globe, .icon-outil, .icon-fleche{
+      width: 25%;
+    }
+  }
+
 }
 
 
@@ -688,8 +1058,8 @@ footer{
       color: @blanc;
       .btnBurger{
         span{
-          background: @blanc;
           margin: 0 0 3px;
+          background: @blanc;
           .transition(background .4s ease-in-out, margin .2s, transform .3s ease-in-out);
         }
         .b2{
@@ -699,8 +1069,8 @@ footer{
           .transform(rotate(45deg));
         }
         .b3{
-          .transform(rotate(-45deg));
           margin-top: -6px;
+          .transform(rotate(-45deg));
         }
       }
       &:hover, &:focus{
@@ -726,13 +1096,13 @@ footer{
     height: 150px;
     .menu{
       position: fixed;
-      height: 0;
       width: 100%;
-      background: rgba(1, 23, 69, 0.9);
+      height: 0;
       top: -500px;
       left: 0;
+      z-index: 2;
       margin: 0;
-      z-index: 1;
+      background: rgba(1, 23, 69, 0.9);
       .transition(height .7s ease-in-out, top .5s ease-in-out);
       &.down{
         height: 100%;
@@ -743,19 +1113,19 @@ footer{
     ul{
       position: absolute;
       top: 50%;
-      margin-top: -170px;
       left: 50%;
+      margin-top: -170px;
       margin-left: -81px;
     }
     li{
       display: block;
-      text-align: center;
       margin: 0 0 30px;
+      text-align: center;
     }
     a{
-      color: @blanc;
       padding: 2px;
       font-size: 1.3em;
+      color: @blanc;
     }
   }
 
@@ -767,10 +1137,116 @@ footer{
     }   
   }
 
+  .avantages{
+    .icon-serrure, .icon-globe, .icon-outil, .icon-fleche{
+      position: relative;
+      &:before{
+        display: block;
+        margin: 0;
+        text-align: center;
+      }
+      &:after{
+        width: 160px;
+        bottom: -15px;
+        left: 50%;
+        margin-left: -80px;
+      }
+    }
+    span{
+      display: block;
+      width: auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+  }
+
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 820px) {
+
+  .schema{
+    width: 500px;
+    height: 735px;
+    margin: 50px auto 0;
+    span{
+      display: block;
+      width: 135px;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+  }
+  
+  .securite{
+    right: auto;
+    left: 50%;
+    margin-left: -161px;
+  }
+
+  .utilisateur, .prescripteur{
+    top: 330px;
+    text-align: center;
+    background: none;
+  }
+
+  .prescripteur{
+    left: auto;
+    right: 0;
+  }
+
+  .bulle{
+    top: 115px;
+    left: 0;
+  }
+
+  .b1{
+    width: 135px;
+    height: 289px;
+    background: url(../layoutImg/saas/devices_mob.png) no-repeat;
+  }
+  .b2{
+    width: 74px;
+    height: 143px;
+    top: 95px;
+    left: 50%;
+    margin-left: -37px;
+    background: url(../layoutImg/saas/smallDevices_mob.png) no-repeat;
+  }
+
+  .s1{
+    top: auto;
+    bottom: 65px;
+    right: 65px;
+    .trait{
+      .transform(rotate(50deg));
+    }
+    .picto{
+      top: 15px;
+      left: 40px;
+    }
+  }
+
+  .t1, .t2{
+    width: 55px;
+    top: 311px;
+  }
+  .t1{
+    right: 94px;
+    .transform(rotate(40deg));
+  }
+  .t2{
+    left: 94px;
+    .transform(rotate(-40deg));
+  }
+
+  .avantages{
+    .icon-serrure, .icon-globe, .icon-outil, .icon-fleche{
+      &:after{
+        width: 100px;
+        margin-left: -50px;
+      }
+    }
+  }
 
 
 }
@@ -811,14 +1287,94 @@ footer{
     }
   }
 
+  .avantages{
+    > li{
+      &.on{
+        .icon-close{
+          display: block;
+        }
+      }
+    }
+    .icon-serrure, .icon-globe, .icon-outil, .icon-fleche{
+      display: block;
+      width: 100%;
+      &:before{
+        display: inline-block;
+        text-align: left;
+      }
+      &:after{
+        display: none;
+      }
+    }
+    span{
+      display: inline-block;
+      width: 70%;
+      padding: 0;
+      text-align: left;
+    }
+    br{
+      display: none;
+    }
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  .schema{
+    width: 280px;
+  }
+
+  .securite{
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    img{
+      width: 100%;
+    }
+  }
+  
+  .t1, .t2{
+    width: 69px;
+  }
+  .t1{
+    top: 287px;
+    left: 12px;
+    .transform(rotate(75deg));
+  }
+  .t2{
+    top: 287px;
+    left: 194px;
+    .transform(rotate(-76deg));
+  }
+
+  .serrure{
+    .trait {
+      width: 38px;
+    }
+  }
+  .s1{
+    bottom: 61px;
+    right: 44px;
+    .picto{
+      top: 11px;
+      left: 22px;
+    }
+  }
+  .s2{
+    .picto{
+      left: -24px;
+    }
+  }
+
 }
 
 @media (max-width: 515px) {
 
   img{
     &.left{
-      float: none;
       display: block;
+      float: none;
       padding: 0 0 20px;
     }
   }
