@@ -179,6 +179,34 @@ function appearDetailAccordion(first){
 }
 
 
+function initMap() {
+    var _zoom = 14;
+    if ($("body").hasClass("lt-ie9") && window.matchMedia("(min-width: 1150px)").matches){ _zoom = 15;}
+
+    var coord = [47.2205681, -1.5604958];
+
+    var mapOptions = {
+        zoom: _zoom,
+        center: new google.maps.LatLng(coord[0], coord[1]),
+        /*zoomControl: false,
+        mapTypeControl: false,
+        streetViewControl: false,*/
+        styles: [{"featureType": "water","elementType": "geometry","stylers": [{"color": "#e9e9e9"},{"lightness": 17}]},{"featureType": "landscape","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 20}]},{"featureType": "road.highway","elementType": "geometry.fill","stylers": [{"color": "#ffffff"},{"lightness": 17}]},{"featureType": "road.highway","elementType": "geometry.stroke","stylers":[{"color": "#ffffff"},{"lightness": 29},{"weight": 0.2}]},{"featureType": "road.arterial","elementType": "geometry","stylers": [{"color": "#ffffff"},{"lightness": 18}]},{"featureType": "road.local","elementType": "geometry","stylers": [{ "color": "#ffffff"},{"lightness": 16}]},{"featureType": "poi","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 21}]},{"featureType": "poi.park","elementType": "geometry","stylers": [{"color": "#dedede"},{"lightness": 21}]},{"elementType": "labels.text.stroke","stylers": [{"visibility": "on"},{"color": "#ffffff"},{"lightness": 16}]},{"elementType": "labels.text.fill","stylers": [{"saturation": 36},{"color": "#333333"},{"lightness": 40}]},{"elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "transit","elementType": "geometry","stylers": [{"color": "#f2f2f2"},{"lightness": 19}]},{"featureType": "administrative","elementType": "geometry.fill","stylers": [{"color": "#fefefe"},{"lightness": 20}]},{"featureType": "administrative","elementType": "geometry.stroke","stylers": [{"color": "#fefefe"},{"lightness": 17},{"weight": 1.2}]}]};
+    var mapElement = document.getElementById('map');
+
+    var map = new google.maps.Map(mapElement, mapOptions);
+
+    var sarrazin = new google.maps.Marker({ 
+        position: new google.maps.LatLng(coord[0], coord[1]),
+        title: 'MySasCredit', 
+        url: 'https://www.google.fr/maps/place/10+Rue+Sarrazin,+44000+Nantes/@47.2205681,-1.5604958,17z/data=!3m1!4b1!4m2!3m1!1s0x4805ec1e2a6323b9:0x89a9e18e6559c69c',
+        icon: 'layoutImg/pin.png',
+        map: map
+    });
+    google.maps.event.addListener(sarrazin, 'click', function(){ window.open(sarrazin.url); });
+}
+
+
 
 ///**** INIT ****///
 
@@ -195,13 +223,17 @@ $(function(){
 
     if($('#detail').length){
         var events = $('html').hasClass('lt-ie9') ? 'click' : 'mouseenter click';
-        $(window).width() > 720 ? onglets.on(events, appearDetail) : onglets.on('click', appearDetailAccordion);
+        window.matchMedia('(min-width: 720px)').matches ? onglets.on(events, appearDetail) : onglets.on('click', appearDetailAccordion);
+    } 
+
+    if($('#map').length){
+        google.maps.event.addDomListener(window, 'load', initMap);
     } 
 
     $(document).scroll(function() {
         myScroll = $(this).scrollTop();
         if($('#detail').length && isVisible($('.avantages')) && firstOpen === false) {
-            $(window).width() > 720 ? appearDetail(0) : appearDetailAccordion(0);
+            window.matchMedia('(min-width: 720px)').matches ? appearDetail(0) : appearDetailAccordion(0);
         }
     });
 
