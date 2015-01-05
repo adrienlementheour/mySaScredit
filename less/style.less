@@ -70,6 +70,20 @@ body{
   color: @txt;
 }
 
+strong, b{
+  .latoBold(1em);
+}
+
+em, i{
+  .latoIt(1em);
+  font-style: normal;
+}
+
+blockquote{
+  .latoIt(1em);
+  margin: 1em 20px;
+}
+
 /* Liens et boutons */
 
 a{
@@ -149,7 +163,7 @@ a{
   position: absolute;
   border: 0;
   &:hover, &:focus{
-    .transform(rotate(180deg));
+    .transform(rotate(-180deg));
     color: @rouge;
   }
 }
@@ -166,6 +180,7 @@ h1, .h1{
   margin: 0.67em 0 1em;
   &.padLeft{
     margin-left: 20px;
+    margin-right: 20px;
   }
 }
 .smallH1{
@@ -208,6 +223,7 @@ h2, .h2{
 ul{
   list-style: none;
   li{
+    outline: 0;
     &:before{
       content: '• ';
       font-size: 10px;
@@ -355,7 +371,7 @@ textarea{
 select{
   cursor: pointer;
   font-size: 16px;
-  min-width: 70px;
+  min-width: 80px;
   background: transparent;
   -webkit-appearance: none;
   border: 0;
@@ -368,6 +384,7 @@ select{
   border-radius: 4px;
   padding: 5px 5px 4px;
   background: #f8f8f8 url(../layoutImg/select.png) no-repeat 90% 50%;
+  overflow: hidden;
   &.objet{
     width: 250px;
     margin: 10px 0 0;
@@ -377,7 +394,7 @@ select{
 }
 
 #objet{
-  width: 270px;
+  width: 280px;
 }
 
 label{
@@ -419,7 +436,7 @@ label{
   display: none;
   position: absolute;
   top: 45px;
-  right: 20px;
+  right: 40px;
   z-index: 2;
   border: 0;
   font-size: 1.2em;
@@ -570,14 +587,14 @@ footer{
 
 .packery{
   padding: 10px 0 0;
+  margin: 0 0 0 19px;
   > li{
     .size(221px);
     .box-sizing(border-box);
-    margin: 0 0 19px 19px;
     text-align: center;
     color: @blanc;
     cursor: pointer;
-    &:hover{
+    &:hover, &:focus{
       h3{
         &:before{
           padding: 0 5px 0 0;
@@ -599,6 +616,9 @@ footer{
       cursor: auto;
       .btn{
         display: inline-block;
+        &:before{
+          margin-top: -11px;
+        }
       }
       span{
         display: block;
@@ -634,14 +654,6 @@ footer{
         }
       }
     }
-    .no-js &{
-      display: inline-block;
-      vertical-align: top;
-      cursor: auto;
-      .icon-close{
-        display: none;
-      }
-    }
   }
   span, ul, .btn, p{
     display: none;
@@ -657,6 +669,9 @@ footer{
       padding: 0 10px 0 0;
       font-size: 9px;
       .transition(.2s ease-in-out);
+      .lt-ie9 &{
+        display: none;
+      }
     }
     span{
       display: block;
@@ -668,9 +683,12 @@ footer{
   .icon-close{
     display: none;
     top: 12px;
-    right: 23px;
-    font-size: 50px;
+    right: 12px;
+    font-size: 35px;
     color: @blanc;
+    &:hover, &:focus{
+      color: @rouge;
+    }
   }
   &.partenaires{
     li{
@@ -678,6 +696,11 @@ footer{
       background: @grisFond;
       line-height: 215px;
       color: @txt;
+      .transition(border-color .2s ease-in-out);
+      &:hover, &:focus{
+        border-color: @bleu;
+        .transition(border-color .1s ease-in-out);
+      }
       &.open, .no-js &{
         line-height: 18px;
       }
@@ -700,6 +723,18 @@ footer{
       background: @orange;
       &.open, .no-js &{
         width: 365px;
+      }
+    }
+  }
+  .no-js &{
+    margin: 0;
+    > li{
+      display: inline-block;
+      vertical-align: top;
+      cursor: auto;
+      margin: 0 0 19px 19px;
+      .icon-close{
+        display: none;
       }
     }
   }
@@ -838,7 +873,7 @@ footer{
         content: ' ';
       }
     }
-    &.on, &:hover{
+    &.on, &:hover, &:focus{
       color: @orangeTitre;
       .transition(color .3s ease-in-out);
       &:before{
@@ -850,6 +885,9 @@ footer{
         font-size: 25px;
         line-height: 11px;
         .transition(height .3s ease-in-out, font-size .3s ease-in-out .1s);
+        .lt-ie9 &{
+          content: '';
+        }
       }
     }
     .no-js &{
@@ -883,11 +921,25 @@ footer{
       margin-left: -12px;
       color: @bleuSaas;
     }
+    &.on{
+      &:before{
+        .lt-ie9 &{
+          content: "\e605 ";
+        }
+      }
+    }
   }
   .icon-globe{
     width: 260px;
     &:before{
       color: @orange;
+    }
+    &.on{
+      &:before{
+        .lt-ie9 &{
+          content: "\e603 ";
+        }
+      }
     }
     &:after{
       width: 175px;
@@ -899,6 +951,13 @@ footer{
     &:before{
       color: @grisFooter;
     }
+    &.on{
+      &:before{
+        .lt-ie9 &{
+          content: "\e604 ";
+        }
+      }
+    }
     &:after{
       width: 183px;
       margin-left: 12px;
@@ -908,6 +967,13 @@ footer{
     width: 200px;
     &:before{
       color: @grisFonce;
+    }
+    &.on{
+      &:before{
+        .lt-ie9 &{
+          content: "\e602 ";
+        }
+      }
     }
     &:after{
       width: 166px;
@@ -932,12 +998,8 @@ footer{
       display: inline-block;
     }
   }
-  .icon-close{
+  .fleche{
     display: none;
-    top: 30px;
-    right: 0;
-    font-size: 30px;
-    color: @orangeTitre;
   }
 }
 
@@ -1144,6 +1206,12 @@ time{
 
   .content{
     margin: 20px;
+    &.padLeft{
+      > h1, > p, > h2, > .oh, > section{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
   }
 
   .main, aside, .aside{
@@ -1471,9 +1539,40 @@ time{
 
   .avantages{
     > li{
+      border-bottom: 1px solid @border;
+      margin: 15px 0 0;
+      padding: 0 0 15px;
+      &:first-child{
+        margin: 0;
+      }
+      div{
+        color: @txt;
+      }
+      .fleche{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 14px;
+        color: @txt;
+        &:hover, &:focus{
+          color: @rouge;
+          border-color: transparent;
+        }
+        &:before{
+          content: ' ›';
+          .lato(50px);
+        }
+      }
+      &:hover, &:focus{
+        .fleche{
+          color: @rouge;
+        }
+      }
       &.on{
-        .icon-close{
-          display: block;
+        .fleche{
+          color: @rouge;
+          .transform(rotate(90deg));
+          top: 20px;
         }
       }
     }
@@ -1490,7 +1589,7 @@ time{
     }
     span{
       display: inline-block;
-      width: 70%;
+      width: 60%;
       padding: 0;
       text-align: left;
     }
@@ -1572,13 +1671,30 @@ time{
   }
 
   .packery, .packery.fonctions{
-    li{
+    > li{
+      width: 45%;
+      height: 160px;
+      img{
+        width: 87%;
+      }
       &.open, .no-js &{
-        width: 94%;
+        width: 95%;
         height: auto;
+        h3{
+          font-size: 1em;
+        }
         span{
           width: 100%;
         }
+      }
+    }
+    h3{
+      margin: 70px 0 0;
+      font-size: 0.75em;
+    }
+    &.partenaires{
+      li{
+        line-height: 160px;
       }
     }
   }
@@ -1654,8 +1770,17 @@ time{
     &.padLeft{
       > h1, > p, > h2, > .oh, > section{
         margin-left: 0;
+        margin-right: 0;
       }
     }
+  }
+  h1.padLeft{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #burger{
+    right: 20px;
   }
 
   .mosaique{
@@ -1665,8 +1790,11 @@ time{
   }
 
   .packery{
-    > li{
-      margin-left: 0;
+    margin: 0;
+    .no-js &{
+      > li{
+        margin-left: 0;
+      }
     }
   }
 }
@@ -1726,12 +1854,16 @@ time{
    ========================================================================== */
  
 @media print {
-  * {} /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
+  *{color: #000;}
+  #menu, #burger{
+    display: none;
+  }
+  footer{
+    a, span{
+      display: none;
+    }
+  }
+  pre, blockquote { page-break-inside: avoid; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }

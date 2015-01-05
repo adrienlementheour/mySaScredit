@@ -57,7 +57,7 @@ if(isset($_POST['submitted'])) {
  		}
  	}
  	if($erreurNom == '' && $erreurPrenom == '' && $erreurEntreprise == '' && $erreurFonction == '' && $erreurMail == '' && $erreurTel == ''){ 
- 		$subject = $objet . " de MySasCredit.com";
+ 		$subject = $objet . " provenant de MySasCredit.com";
 
  		$from = 'From: ' . $nom . ' ' . $prenom . '<' . $mail . '>';
  		$reply = 'Reply-To: ' . $mail;
@@ -128,11 +128,12 @@ if(isset($_POST['submitted'])) {
 						<form method="POST" action="contact.php">
 							<fieldset class="w50">
 						  		<fieldset>
-						  			<label for="sexe" class="hidden">Sexe</label>
+						  			<label for="sexe" class="hidden">Civilité:</label>
 						  			<div class="select oh">
 							  			<select name="sexe" id="sexe">
-							  				<option value="M" <?php if($sexe == 'M') echo 'selected="selected"'; ?>>M</option>
+							  				<option value="Mr" <?php if($sexe == 'Mr') echo 'selected="selected"'; ?>>Mr</option>
 							  				<option value="Mme" <?php if($sexe == 'Mme') echo 'selected="selected"'; ?>>Mme</option>
+							  				<option value="Mlle" <?php if($sexe == 'Mlle') echo 'selected="selected"'; ?>>Mlle</option>
 							  			</select>
 							  		</div>
 						  		</fieldset><fieldset class="<?php if($erreurNom != '') echo 'error'; ?>">
@@ -159,7 +160,10 @@ if(isset($_POST['submitted'])) {
 					  			<div class="select objet">
 						  			<select name="objet" id="objet">
 						  				<option value="Contact" <?php if($objet == 'Contact') echo 'selected="selected"'; ?>>Contact</option>
-						  				<option value="Coucou" <?php if($objet == 'Coucou') echo 'selected="selected"'; ?>>Coucou</option>
+						  				<option value="Candidature" <?php if($objet == 'Candidature') echo 'selected="selected"'; ?>>Candidature</option>
+						  				<option value="Demande de devis" <?php if($objet == 'Demande de devis') echo 'selected="selected"'; ?>>Demande de devis</option>
+						  				<option value="Demande de documentation" <?php if($objet == 'Demande de documentation') echo 'selected="selected"'; ?>>Demande de documentation</option>
+						  				<option value="Inscription a la newsletter" <?php if($objet == 'Inscription a la newsletter') echo 'selected="selected"'; ?>>Inscription à la newsletter</option>
 						  			</select>
 						  		</div>
 					  		</fieldset><fieldset class='message'>
@@ -207,7 +211,7 @@ if(isset($_POST['submitted'])) {
 	  	
 	  	
 		<script src="js/libs/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc"></script>
 		<script src="js/min/script-min.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

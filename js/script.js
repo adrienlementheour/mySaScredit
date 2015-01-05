@@ -5,7 +5,11 @@ var rand, newImg, myScroll,
     imgVisible = [], 
     img = [1, 2, 3, 4, 5, 6, 7, 8, 9],
     firstOpen = false,
-    onglets = $('#avantages').find('.avantages > li');
+    mos = $('#mosaique'),
+    avantages = $('#avantages'),
+    onglets = avantages.find('.avantages > li'),
+    pack = $('.packery'),
+    detail = $('#detail');
 
 
 
@@ -25,15 +29,15 @@ function isVisible(elt){
 
 /**** Animation du menu responsive ****/
 function setBurgerMenu(){
-    if( $('#burger').css('display') !== 'none' ){
+    var burger = $('#burger');
 
-        $('#burger').click(function(){
+    if( burger.css('display') !== 'none' ){
+        burger.click(function(){
             $('#menu').toggleClass('down');
             $('#logo').toggleClass('down');
-            setTimeout(function(){ $('#burger').toggleClass('down'); }, 300);
+            setTimeout(function(){ burger.toggleClass('down'); }, 300);
             return false;
         });
-
     }
 }
 
@@ -58,7 +62,7 @@ TxtType.prototype.tick = function() {
 
     var that = this;
     var delta = 200 - Math.random() * 100;
-    if (this.isDeleting) delta /= 2;
+    if (this.isDeleting){ delta /= 2; }
 
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
@@ -77,7 +81,7 @@ function animTxt(){
     var toRotate = txt[0].getAttribute('data-type');
     var period = txt[0].getAttribute('data-period');
            
-    if (toRotate) new TxtType(txt[0], jQuery.parseJSON(toRotate), period);
+    if (toRotate){ new TxtType(txt[0], jQuery.parseJSON(toRotate), period); }
 }
 
 
@@ -86,7 +90,7 @@ function animMosaique(){
     
     function animImg(div){
 
-        var divImg = $('#mosaique').find('div'), 
+        var divImg = mos.find('div'), 
             img1 = divImg.eq(div).find('.img1'), 
             img2 = divImg.eq(div).find('.img2');
 
@@ -118,7 +122,7 @@ function animMosaique(){
     }
 
     for(var x=0; x<8; x++){ 
-        $('#mosaique').find('img').eq(x).data('img', x+1); 
+        mos.find('img').eq(x).data('img', x+1); 
     }
     animImg(div);    
 }
@@ -126,14 +130,17 @@ function animMosaique(){
 
 /**** Ouverture des blocs partenaires, références, cartographie ****/
 function openPartners(){
-    $('.packery').packery({ itemSelector: '.part' }).on( 'click', '.part', function(){
-        $(this).addClass('open').siblings().removeClass('open');
-        $('.packery').packery();
+    pack.packery({ itemSelector: '.part', gutter: 19/*, isLayoutInstant: true*/}).on( 'click keypress', '.part', function(event){
+        if(event.which === 13 || event.type === 'click'){
+            $('html, body').delay(300).animate({scrollTop: $(this).offset().top - 50 }, 600);
+            $(this).addClass('open').siblings().removeClass('open');
+            pack.packery();
+        }
     });
 
     $('.icon-close').click(function(){
         $(this).parent('.part').removeClass('open');
-        $('.packery').packery();
+        pack.packery();
         return false;
     });
 }
@@ -142,22 +149,22 @@ function openPartners(){
 /**** Apparition du détail des avantages page Saas ****/
 function appearDetail(first){
     firstOpen = true;
-    var that = first !== 0 ? $(this) : onglets.eq(0);
-    var classe = first !== 0 ? 'a' + $(this).index() : 'a' + 0;
-    var classeDetail = $('#detail').attr('class');
+    var that = first !== 0 ? $(this) : onglets.eq(0),
+        classe = first !== 0 ? 'a' + $(this).index() : 'a' + 0,
+        classeDetail = detail.attr('class'),
+        content = that.find('div').clone();
+    
+    onglets.removeClass('on');
+    that.addClass('on');
+    //that.addClass('on').siblings().removeClass('on');
 
-    //if($('html').hasClass('lt-ie9')){ onglets.removeClass('on'); }
+    detail.removeClass().stop();
+    if(classe !== classeDetail){ detail.slideUp(300, function(){ $(this).html(content).slideDown(300).addClass(classe); }); }
 
-    that.addClass('on').siblings().removeClass('on');
-    var content = that.find('div').clone();
-
-    $('#detail').removeClass().stop();
-    if(classe !== classeDetail) $('#detail').slideUp(300, function(){ $(this).html(content).slideDown(300).addClass(classe); });
-
-    if(first !== 0 && !$('html').hasClass('lt-ie9')){
-        $('#avantages').mouseleave(function(){
+    if(first !== 0){
+        avantages.mouseleave(function(){
             onglets.removeClass('on');
-            $('#detail').removeClass().stop().slideUp();
+            detail.removeClass().stop().slideUp();
         });
     }
     
@@ -165,17 +172,22 @@ function appearDetail(first){
 
 /**** Apparition du détail des avantages page Saas en accordéon pour smartphone ****/
 function appearDetailAccordion(first){
-    firstOpen = true;
-    var that = first !== 0 ? $(this) : onglets.eq(0);
+    if(event.which === 13 || event.type === 'click' || event.type === 'mouseenter'){
 
-    if(that.hasClass('on')){
-        that.removeClass('on').find('div').slideUp(300);
-    }else{
-        that.addClass('on').siblings().removeClass('on').find('div').slideUp(300);
-        that.find('div').slideDown(300); 
-    }   
+        firstOpen = true;
+        var that = first !== 0 ? $(this) : onglets.eq(0);
 
-    return false;
+        if(that.hasClass('on')){
+            that.removeClass('on').find('div').slideUp(300);
+        }else{
+            that.addClass('on').siblings().removeClass('on').find('div').slideUp(300);
+            that.find('div').slideDown(300); 
+        }   
+
+        if(first !== 0){ $('html, body').delay(300).animate({scrollTop: that.offset().top - 100 }, 600); }
+
+        return false;
+    }
 }
 
 
@@ -188,9 +200,6 @@ function initMap() {
     var mapOptions = {
         zoom: _zoom,
         center: new google.maps.LatLng(coord[0], coord[1]),
-        /*zoomControl: false,
-        mapTypeControl: false,
-        streetViewControl: false,*/
         styles: [{"featureType": "water","elementType": "geometry","stylers": [{"color": "#e9e9e9"},{"lightness": 17}]},{"featureType": "landscape","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 20}]},{"featureType": "road.highway","elementType": "geometry.fill","stylers": [{"color": "#ffffff"},{"lightness": 17}]},{"featureType": "road.highway","elementType": "geometry.stroke","stylers":[{"color": "#ffffff"},{"lightness": 29},{"weight": 0.2}]},{"featureType": "road.arterial","elementType": "geometry","stylers": [{"color": "#ffffff"},{"lightness": 18}]},{"featureType": "road.local","elementType": "geometry","stylers": [{ "color": "#ffffff"},{"lightness": 16}]},{"featureType": "poi","elementType": "geometry","stylers": [{"color": "#f5f5f5"},{"lightness": 21}]},{"featureType": "poi.park","elementType": "geometry","stylers": [{"color": "#dedede"},{"lightness": 21}]},{"elementType": "labels.text.stroke","stylers": [{"visibility": "on"},{"color": "#ffffff"},{"lightness": 16}]},{"elementType": "labels.text.fill","stylers": [{"saturation": 36},{"color": "#333333"},{"lightness": 40}]},{"elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "transit","elementType": "geometry","stylers": [{"color": "#f2f2f2"},{"lightness": 19}]},{"featureType": "administrative","elementType": "geometry.fill","stylers": [{"color": "#fefefe"},{"lightness": 20}]},{"featureType": "administrative","elementType": "geometry.stroke","stylers": [{"color": "#fefefe"},{"lightness": 17},{"weight": 1.2}]}]};
     var mapElement = document.getElementById('map');
 
@@ -219,11 +228,12 @@ $(function(){
         animMosaique();
     }
 
-    if($('.packery').length) openPartners();
+    if(pack.length){ 
+        openPartners(); 
+    }
 
-    if($('#detail').length){
-        var events = $('html').hasClass('lt-ie9') ? 'click' : 'mouseenter click';
-        window.matchMedia('(min-width: 720px)').matches ? onglets.on(events, appearDetail) : onglets.on('click', appearDetailAccordion);
+    if(detail.length){
+        matchMedia('all and (max-width: 720px)').matches ? onglets.on('click', appearDetailAccordion) : onglets.on('mouseenter click keypress', appearDetail);
     } 
 
     if($('#map').length){
@@ -232,8 +242,8 @@ $(function(){
 
     $(document).scroll(function() {
         myScroll = $(this).scrollTop();
-        if($('#detail').length && isVisible($('.avantages')) && firstOpen === false) {
-            window.matchMedia('(min-width: 720px)').matches ? appearDetail(0) : appearDetailAccordion(0);
+        if(detail.length && isVisible(avantages) && firstOpen === false) {
+            matchMedia('all and (max-width: 720px)').matches ? appearDetailAccordion(0) : appearDetail(0);
         }
     });
 
