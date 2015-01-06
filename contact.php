@@ -1,4 +1,4 @@
- <?php
+<?php
 
 $status = '';
 $erreurNom = '';
@@ -212,6 +212,9 @@ if(isset($_POST['submitted'])) {
 	  	
 		<script src="js/libs/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc"></script>
+		<script type="text/javascript">
+			var pin = 'layoutImg/pin.png';
+		</script>
 		<script src="js/min/script-min.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

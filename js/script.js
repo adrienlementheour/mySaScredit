@@ -109,7 +109,7 @@ function animMosaique(){
 
 
         function fadeAndReplace(i1, i2){
-            i1.data('img', newImg).attr('src', 'layoutImg/home/mos' + newImg + '.jpg').addClass('up').fadeTo(1000, 1);
+            i1.data('img', newImg).attr('src', 'wp-content/themes/mySasCredit/layoutImg/home/mos' + newImg + '.jpg').addClass('up').fadeTo(1000, 1);
             i2.removeClass('up').fadeTo(1000, 0);
         }   
         img1.hasClass('up') ? fadeAndReplace(img2, img1) : fadeAndReplace(img1, img2);  
@@ -209,7 +209,7 @@ function initMap() {
         position: new google.maps.LatLng(coord[0], coord[1]),
         title: 'MySasCredit', 
         url: 'https://www.google.fr/maps/place/10+Rue+Sarrazin,+44000+Nantes/@47.2205681,-1.5604958,17z/data=!3m1!4b1!4m2!3m1!1s0x4805ec1e2a6323b9:0x89a9e18e6559c69c',
-        icon: 'layoutImg/pin.png',
+        icon: pin,
         map: map
     });
     google.maps.event.addListener(sarrazin, 'click', function(){ window.open(sarrazin.url); });

@@ -487,6 +487,13 @@ header{
     &:before{
       display: none;
     }
+    &.current-menu-item{
+      a{
+        border-bottom: 5px solid @rouge;
+        color: @orange;
+        .transition(.1s ease-in-out);
+      }
+    }
   }
   a{
     padding: 8px 2px;
@@ -985,6 +992,9 @@ footer{
     margin: 10px 0 30px;
     .lato(1.15em);
     cursor: auto;
+    p{
+      margin: 0;
+    }
     ul{
       margin: 5px 0 0;
       padding: 0 0 0 20px;
@@ -1016,6 +1026,9 @@ footer{
       }
     }
   }
+  p{
+    margin: 0;
+  }
 }
 
 
@@ -1046,7 +1059,7 @@ footer{
 
 /* Actualités */
 
-.actus{
+.blog{
   article{
     position: relative;
     overflow: hidden;
@@ -1067,7 +1080,7 @@ footer{
 time{
   color: @jauneDate;
   .encodeBold(0.9em);
-  +h3{
+  +h2{
     margin-top: 5px;
   }
 }
@@ -1090,7 +1103,7 @@ time{
 }
 
 
-.actu{
+.single{
   article{
     >img, >div{
       display: inline-block;

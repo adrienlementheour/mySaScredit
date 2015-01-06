@@ -595,6 +595,14 @@ header li {
 header li:before {
   display: none;
 }
+header li.current-menu-item a {
+  border-bottom: 5px solid #e64314;
+  color: #f08c05;
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition: 0.1s ease-in-out;
+  -o-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
 header a {
   padding: 8px 2px;
   font-family: 'encodeBold', sans-serif;
@@ -1165,6 +1173,9 @@ footer a:focus {
   -moz-osx-font-smoothing: grayscale;
   cursor: auto;
 }
+.avantages div p {
+  margin: 0;
+}
 .avantages div ul {
   margin: 5px 0 0;
   padding: 0 0 0 20px;
@@ -1194,6 +1205,9 @@ footer a:focus {
 #detail ul li:before {
   font-size: 15px;
 }
+#detail p {
+  margin: 0;
+}
 /* Page Contact */
 .adress {
   margin-bottom: 30px;
@@ -1216,13 +1230,13 @@ footer a:focus {
   height: 220px;
 }
 /* Actualités */
-.actus article {
+.blog article {
   position: relative;
   overflow: hidden;
   padding: 0 0 30px;
   margin: 0 0 25px;
 }
-.actus article:after {
+.blog article:after {
   content: '';
   display: block;
   position: absolute;
@@ -1239,7 +1253,7 @@ time {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-time + h3 {
+time + h2 {
   margin-top: 5px;
 }
 .navActus {
@@ -1259,27 +1273,27 @@ time + h3 {
 .navActus a:focus {
   color: #e64314;
 }
-.actu article > img,
-.actu article > div {
+.single article > img,
+.single article > div {
   display: inline-block;
   vertical-align: top;
 }
-.actu article > img {
+.single article > img {
   margin: 0 35px 0 0;
 }
-.actu article > div {
+.single article > div {
   width: 685px;
   padding: 0 0 20px;
   border-bottom: 1px solid #9c9e9f;
 }
-.actu article .btn {
+.single article .btn {
   margin-top: -20px;
   float: left;
 }
-.actu article .btn:before {
+.single article .btn:before {
   content: '‹';
 }
-.actu article .btn:after {
+.single article .btn:after {
   content: '';
   display: block;
   position: absolute;
@@ -1289,8 +1303,8 @@ time + h3 {
   width: 10px;
   background: #ffffff;
 }
-.actu article .btn:hover:before,
-.actu article .btn:focus:before {
+.single article .btn:hover:before,
+.single article .btn:focus:before {
   left: 10px;
 }
 /* @group General */
