@@ -20,115 +20,16 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/apple-touch-icon-114x114.png": {
+	"\/apple-touch-icon-180x180.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 15960,
-		"inputAbbreviatedPath": "\/apple-touch-icon-114x114.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-114x114.png",
+		"initialSize": 37269,
+		"inputAbbreviatedPath": "\/apple-touch-icon-180x180.png",
+		"outputAbbreviatedPath": "\/apple-touch-icon-180x180.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-120x120.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 16146,
-		"inputAbbreviatedPath": "\/apple-touch-icon-120x120.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-120x120.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-144x144.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 17160,
-		"inputAbbreviatedPath": "\/apple-touch-icon-144x144.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-144x144.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-152x152.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 17336,
-		"inputAbbreviatedPath": "\/apple-touch-icon-152x152.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-152x152.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-57x57.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13869,
-		"inputAbbreviatedPath": "\/apple-touch-icon-57x57.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-57x57.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-60x60.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13925,
-		"inputAbbreviatedPath": "\/apple-touch-icon-60x60.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-60x60.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-72x72.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 14383,
-		"inputAbbreviatedPath": "\/apple-touch-icon-72x72.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-72x72.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-76x76.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 14517,
-		"inputAbbreviatedPath": "\/apple-touch-icon-76x76.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-76x76.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon-precomposed.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 18502,
-		"inputAbbreviatedPath": "\/apple-touch-icon-precomposed.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon-precomposed.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/apple-touch-icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 17336,
-		"inputAbbreviatedPath": "\/apple-touch-icon.png",
-		"outputAbbreviatedPath": "\/apple-touch-icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/apropos.html": {
 		"fileType": 8192,
@@ -184,27 +85,16 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/favicon-160x160.png": {
+	"\/favicon-192x192.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 17692,
-		"inputAbbreviatedPath": "\/favicon-160x160.png",
-		"outputAbbreviatedPath": "\/favicon-160x160.png",
+		"initialSize": 41318,
+		"inputAbbreviatedPath": "\/favicon-192x192.png",
+		"outputAbbreviatedPath": "\/favicon-192x192.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/favicon-16x16.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 12369,
-		"inputAbbreviatedPath": "\/favicon-16x16.png",
-		"outputAbbreviatedPath": "\/favicon-16x16.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/favicon-196x196.png": {
 		"fileType": 32768,
@@ -217,27 +107,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
-	"\/favicon-32x32.png": {
+	"\/favicon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 12860,
-		"inputAbbreviatedPath": "\/favicon-32x32.png",
-		"outputAbbreviatedPath": "\/favicon-32x32.png",
+		"initialSize": 70147,
+		"inputAbbreviatedPath": "\/favicon.png",
+		"outputAbbreviatedPath": "\/favicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/favicon-96x96.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 15256,
-		"inputAbbreviatedPath": "\/favicon-96x96.png",
-		"outputAbbreviatedPath": "\/favicon-96x96.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/index.html": {
 		"fileType": 8192,
@@ -534,6 +413,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/libs\/modernizr.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/libs\/modernizr.js",
+		"outputAbbreviatedPath": "\/js\/libs\/min\/modernizr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/libs\/packery.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -551,6 +441,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/matchMedia.js",
 		"outputAbbreviatedPath": "\/js\/min\/matchMedia-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/matchMedia-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/matchMedia-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/matchMedia-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -989,61 +890,6 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
-		},
-	"\/mstile-144x144.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6045,
-		"inputAbbreviatedPath": "\/mstile-144x144.png",
-		"outputAbbreviatedPath": "\/mstile-144x144.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/mstile-150x150.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5895,
-		"inputAbbreviatedPath": "\/mstile-150x150.png",
-		"outputAbbreviatedPath": "\/mstile-150x150.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/mstile-310x150.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6488,
-		"inputAbbreviatedPath": "\/mstile-310x150.png",
-		"outputAbbreviatedPath": "\/mstile-310x150.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/mstile-310x310.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13262,
-		"inputAbbreviatedPath": "\/mstile-310x310.png",
-		"outputAbbreviatedPath": "\/mstile-310x310.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
-		},
-	"\/mstile-70x70.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4097,
-		"inputAbbreviatedPath": "\/mstile-70x70.png",
-		"outputAbbreviatedPath": "\/mstile-70x70.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 1
 		},
 	"\/partenaires.html": {
 		"fileType": 8192,

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://stereosuper.fr/valid/mco/wordpress/sitemap_index.xml

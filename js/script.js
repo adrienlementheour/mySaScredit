@@ -130,7 +130,7 @@ function animMosaique(){
 
 /**** Ouverture des blocs partenaires, références, cartographie ****/
 function openPartners(){
-    pack.packery({ itemSelector: '.part', gutter: 19/*, isLayoutInstant: true*/}).on( 'click keypress', '.part', function(event){
+    pack.packery({ itemSelector: '.part', gutter: 19}).on( 'click keypress', '.part', function(event){
         if(event.which === 13 || event.type === 'click'){
             $('html, body').delay(300).animate({scrollTop: $(this).offset().top - 50 }, 600);
             $(this).addClass('open').siblings().removeClass('open');
@@ -156,7 +156,6 @@ function appearDetail(first){
     
     onglets.removeClass('on');
     that.addClass('on');
-    //that.addClass('on').siblings().removeClass('on');
 
     detail.removeClass().stop();
     if(classe !== classeDetail){ detail.slideUp(300, function(){ $(this).html(content).slideDown(300).addClass(classe); }); }
