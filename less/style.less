@@ -177,7 +177,7 @@ h1, .h1{
   .encodeBold(1.4em);
   color: @orangeTitre;
   text-transform: uppercase;
-  margin: 0.67em 0 1em;
+  margin: 0 0 1em;
   &.padLeft{
     margin-left: 20px;
     margin-right: 20px;
@@ -224,10 +224,15 @@ ul{
   list-style: none;
   li{
     outline: 0;
+    margin: 0 0 5px;
+    position: relative;
     &:before{
       content: '• ';
       font-size: 10px;
       color: @rouge;
+      position: absolute;
+      left: -10px;
+      top: 4px;
     }
   }
 }
@@ -248,7 +253,7 @@ ul{
 }
 
 .content{
-  margin: 40px;
+  margin: 0 40px 40px 40px;
   &.padLeft{
     > h1, > p, > h2, > .oh, > section{
       margin-left: 20px;
@@ -601,6 +606,7 @@ footer{
     text-align: center;
     color: @blanc;
     cursor: pointer;
+    margin: 0;
     &:hover, &:focus{
       h3{
         &:before{
@@ -862,6 +868,9 @@ footer{
     &:before{
       vertical-align: middle;
       font-size: 90px;
+      position: relative;
+      left: auto;
+      top: auto;
       .transition(color .3s ease-in-out);
     }
     &:after{
@@ -1001,6 +1010,7 @@ footer{
       li{
         &:before{
           font-size: 15px;
+          top: 1px;
         }
       }
     }
@@ -1023,6 +1033,7 @@ footer{
     li{
       &:before{
         font-size: 15px;
+        top: 1px;
       }
     }
   }

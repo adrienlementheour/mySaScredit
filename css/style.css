@@ -270,7 +270,7 @@ h1,
   -moz-osx-font-smoothing: grayscale;
   color: #e14d07;
   text-transform: uppercase;
-  margin: 0.67em 0 1em;
+  margin: 0 0 1em;
 }
 h1.padLeft,
 .h1.padLeft {
@@ -324,11 +324,16 @@ ul {
 }
 ul li {
   outline: 0;
+  margin: 0 0 5px;
+  position: relative;
 }
 ul li:before {
   content: '• ';
   font-size: 10px;
   color: #e64314;
+  position: absolute;
+  left: -10px;
+  top: 4px;
 }
 .bigP {
   font-size: 1.15em;
@@ -346,7 +351,7 @@ ul li:before {
   margin: 0 auto;
 }
 .content {
-  margin: 40px;
+  margin: 0 40px 40px 40px;
 }
 .content.padLeft > h1,
 .content.padLeft > p,
@@ -720,6 +725,7 @@ footer a:focus {
   text-align: center;
   color: #ffffff;
   cursor: pointer;
+  margin: 0;
 }
 .packery > li:hover h3:before,
 .packery > li:focus h3:before {
@@ -1030,6 +1036,9 @@ footer a:focus {
 .avantages > li:before {
   vertical-align: middle;
   font-size: 90px;
+  position: relative;
+  left: auto;
+  top: auto;
   -webkit-transition: color 0.3s ease-in-out;
   -moz-transition: color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out;
@@ -1182,6 +1191,7 @@ footer a:focus {
 }
 .avantages div ul li:before {
   font-size: 15px;
+  top: 1px;
 }
 .no-js .avantages div {
   display: inline-block;
@@ -1204,6 +1214,7 @@ footer a:focus {
 }
 #detail ul li:before {
   font-size: 15px;
+  top: 1px;
 }
 #detail p {
   margin: 0;
