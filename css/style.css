@@ -1200,6 +1200,9 @@ footer a:focus {
   display: none;
 }
 #detail {
+  min-height: 100px;
+}
+#dContent {
   display: none;
   font-family: 'lato', sans-serif;
   font-weight: normal;
@@ -1208,15 +1211,15 @@ footer a:focus {
   -moz-osx-font-smoothing: grayscale;
   color: #e14d07;
 }
-#detail ul {
+#dContent ul {
   margin: 5px 0 0;
   padding: 0 0 0 20px;
 }
-#detail ul li:before {
+#dContent ul li:before {
   font-size: 15px;
   top: 1px;
 }
-#detail p {
+#dContent p {
   margin: 0;
 }
 /* Page Contact */
@@ -1775,6 +1778,9 @@ time + h2 {
   .avantages br {
     display: none;
   }
+  #detail {
+    display: none;
+  }
   .actu article > div {
     margin: 20px 0 0;
     padding: 0 0 40px;
@@ -1844,6 +1850,7 @@ time + h2 {
   .packery > li img,
   .packery.fonctions > li img {
     width: 87%;
+    height: auto;
   }
   .packery > li.open,
   .packery.fonctions > li.open,

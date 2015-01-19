@@ -9,7 +9,7 @@ var rand, newImg, myScroll,
     avantages = $('#avantages'),
     onglets = avantages.find('.avantages > li'),
     pack = $('.packery'),
-    detail = $('#detail');
+    detail = $('#dContent');
 
 
 
@@ -158,7 +158,7 @@ function appearDetail(first){
     that.addClass('on');
 
     detail.removeClass().stop();
-    if(classe !== classeDetail){ detail.slideUp(300, function(){ $(this).html(content).slideDown(300).addClass(classe); }); }
+    if(classe !== classeDetail) detail.slideUp(300, function(){ $(this).html(content).slideDown(400).addClass(classe); });
 
     if(first !== 0){
         avantages.mouseleave(function(){
@@ -183,7 +183,7 @@ function appearDetailAccordion(first){
             that.find('div').slideDown(300); 
         }   
 
-        if(first !== 0){ $('html, body').delay(300).animate({scrollTop: that.offset().top - 100 }, 600); }
+        if(first !== 0) $('html, body').delay(300).animate({scrollTop: that.offset().top - 100 }, 600);
 
         return false;
     }
@@ -227,17 +227,13 @@ $(function(){
         animMosaique();
     }
 
-    if(pack.length){ 
-        openPartners(); 
-    }
+    if(pack.length) openPartners(); 
 
     if(detail.length){
         matchMedia('all and (max-width: 720px)').matches ? onglets.on('click', appearDetailAccordion) : onglets.on('mouseenter click keypress', appearDetail);
     } 
 
-    if($('#map').length){
-        google.maps.event.addDomListener(window, 'load', initMap);
-    } 
+    if($('#map').length) google.maps.event.addDomListener(window, 'load', initMap);
 
     $(document).scroll(function() {
         myScroll = $(this).scrollTop();

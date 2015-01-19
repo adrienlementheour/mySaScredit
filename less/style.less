@@ -1024,6 +1024,9 @@ footer{
 }
 
 #detail{
+  min-height: 100px;
+}
+#dContent{
   display: none;
   .lato(1.15em);
   color: @orangeTitre;
@@ -1622,6 +1625,10 @@ time{
     }
   }
 
+  #detail{
+    display: none;
+  }
+
   .actu{
     article{
       >div{
@@ -1700,6 +1707,7 @@ time{
       height: 160px;
       img{
         width: 87%;
+        height: auto;
       }
       &.open, .no-js &{
         width: 95%;
