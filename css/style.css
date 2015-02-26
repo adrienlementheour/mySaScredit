@@ -339,11 +339,7 @@ ul li:before {
   font-size: 1.15em;
 }
 .chapo {
-  font-family: 'latoBold', sans-serif;
-  font-weight: normal;
   font-size: 1.1em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 /* Blocs de contenu */
 .wrapper {
@@ -734,6 +730,10 @@ footer a:focus {
   -moz-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+}
+.packery > li img {
+  max-width: 90%;
+  height: auto;
 }
 .packery > li li {
   padding: 0 0 7px;
@@ -1850,7 +1850,6 @@ time + h2 {
   .packery > li img,
   .packery.fonctions > li img {
     width: 87%;
-    height: auto;
   }
   .packery > li.open,
   .packery.fonctions > li.open,
