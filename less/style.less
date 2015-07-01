@@ -47,9 +47,18 @@ hr {
 }
 img {
     vertical-align: middle;
-    &.left{
+    &.left, &.alignleft{
       float: left;
       padding: 0 20px 10px 0;
+    }
+    &.alignright{
+      float: right;
+      padding: 0 0 10px 20px;
+    }
+    &.aligncenter{
+      margin: 0 auto;
+      padding: 0 0 20px;
+      display: block;
     }
 }
 fieldset {
@@ -132,6 +141,54 @@ a{
   }
   &.float{
     float: right;
+  }
+  &.prev{
+    float: left;
+    &:before{
+      content: '‹';
+    }
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -10px;
+      height: 37px;
+      width: 10px;
+      background: @blanc;
+    }
+    &:hover, &:focus{
+      &:before{
+        left: 10px;
+      }
+    }
+  }
+  &.next{
+    float: right;
+    padding: 10px 30px 10px 20px;
+    &:after{
+      content: '›';
+      position: absolute;
+      margin-top: -13px;
+      top: 50%;
+      right: 15px;
+      font-size: 1.5em;
+      .transition(right .2s ease-in-out);
+    }
+    &:before{
+      content: '';
+      display: block;
+      top: 0;
+      left: -10px;
+      height: 37px;
+      width: 10px;
+      background: @blanc;
+    }
+    &:hover, &:focus{
+      &:after{
+        right: 10px;
+      }
+    }
   }
 }
 .btnO{
@@ -253,10 +310,15 @@ ul{
 }
 
 .content{
-  margin: 0 40px 40px 40px;
+  margin: 145px 40px 40px 40px;
   &.padLeft{
     > h1, > p, > h2, > .oh, > section{
       margin-left: 20px;
+    }
+    > .oh, > section{
+      .single &{
+        margin-left: 0;
+      }
     }
   }
 }
@@ -325,7 +387,7 @@ fieldset{
   &.w50{
     width: 50%;
   }
-  &.message{
+  &.message, &.block{
     display: block;
   }
   &.error{
@@ -477,6 +539,11 @@ label{
 
 header{
   padding: 0 10px;
+  position: fixed;
+  width: 1040px;
+  background: #fff;
+  top: 0;
+  z-index: 1;
   .menu{
     display: inline-block;
     padding: 25px 0 0;
@@ -1077,7 +1144,7 @@ footer{
 
 /* Actualités */
 
-.blog{
+.blog, .category{
   article{
     position: relative;
     overflow: hidden;
@@ -1107,7 +1174,10 @@ time{
   padding: 0;
   text-align: center;
   li{
-    display: inline;
+    display: inline-block;
+    text-align: center;
+    min-width: 15px;
+    padding: 0 2px;
     &:before{
       display: none;
     }
@@ -1118,46 +1188,136 @@ time{
       color: @rouge;
     }
   }
+  span{
+    width: 100%;
+    display: block;
+    background: @orange;
+    color: #fff;
+  }
 }
 
 
 .single{
   article{
-    >img, >div{
+    padding: 30px 0 0;
+    >div{
       display: inline-block;
       vertical-align: top;
-    }
-    >img{
-      margin: 0 35px 50px 0;
-    }
-    >div{
       width: 685px;
-      padding: 0 0 20px;
+      padding: 0 0 35px;
       border-bottom: 1px solid @border;
+      .attachment-msc{
+        margin: 0 25px 30px 0;
+        float: left;
+      }
+      img{
+        max-width: 100%;
+        height: auto;
+      }
     }
     .btn{
       margin-top: -20px;
-      float: left;
+    }
+  }
+}
+
+.sidebar-blog{
+  width: 250px;
+  margin: 0;
+  position: fixed;
+  + .oh{
+    display: inline-block;
+    width: 685px;
+    margin-left: 270px !important;
+  }
+  /*+ article{
+    margin-left: 20px;
+  }*/
+}
+
+.cat{
+  .encodeBold(.85em);
+  color: @bleu;
+  border-color: @bleu;
+  &:hover, &:focus{
+    color: @orange;
+    border-color: @orange;
+  }
+}
+.listCat{
+  padding: 0 0 0 10px;
+  margin: 5px 0 0;
+  li{
+    &:before{
+      color: @bleu;
+    }
+    &.current-cat{
       &:before{
-        content: '‹';
+        color: @orange;
       }
-      &:after{
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        right: -10px;
-        height: 37px;
-        width: 10px;
-        background: @blanc;
-      }
-      &:hover, &:focus{
-        &:before{
-          left: 10px;
-        }
+      a{
+        color: @orange;
+        border-color: @orange;
       }
     }
   }
+  a{
+    &:extend(.cat all);
+  }
+}
+
+.nbComments{
+  padding: 20px 0 0;
+  display: inline-block;
+  + .btn{
+    float: right;
+  }
+}
+
+#comments{
+  margin: 40px 0 0;
+  form{
+    margin: 40px 0 0;
+  }
+  .blockError{
+    margin: 20px 0 0;
+  }
+  #submit{
+    float: right;
+    margin: 0;
+  }
+  textarea{
+    height: 95px;
+  }
+  fieldset{
+    margin: 0 0 11px;
+    vertical-align: top;
+  }
+}
+
+.list-comments{
+  padding: 0 !important;
+  ul{
+    padding: 30px 0 0;
+  }
+  li{
+    position: relative;
+    min-height: 50px;
+    margin: 0 0 35px;
+    &:before{
+      display: none;
+    }
+    div{
+      margin-left: 60px;
+    }
+  }
+  .avatar{
+    position: absolute;
+  }
+}
+
+.date-comment{
+  color: @grisFooter;
 }
 
 
@@ -1264,6 +1424,28 @@ time{
   }
   .w720, .w480{
     width: auto;
+  }
+
+  header{
+    width: auto;
+    position: relative;
+  }
+
+  .sidebar-blog{
+    position: relative;
+    display: inline-block;
+    + .oh{
+      margin-left: 20px !important;
+      width: 645px;
+    }
+  }
+
+  .single{
+    article{
+      > div{
+        width: 100%;
+      }
+    }
   }
   
 
@@ -1424,6 +1606,14 @@ time{
       width: auto;
       padding: 0 20px;
       text-align: center;
+    }
+  }
+
+  .sidebar-blog{
+    margin-left: 20px;
+    + .oh{
+      width: auto;
+      margin: 30px 0 0;
     }
   }
 
@@ -1643,6 +1833,16 @@ time{
     }
   }
 
+  #comments{
+    .w50{
+      display: block;
+      width: 280px;
+    }
+    #submit{
+      float: none;
+    }
+  }
+
 }
 
 @media (max-width: 560px) {
@@ -1698,10 +1898,13 @@ time{
 @media (max-width: 515px) {
 
   img{
-    &.left{
+    &.left, &.alignleft, &.alignright{
       display: block;
       float: none;
       padding: 0 0 20px;
+    }
+    &.aligncenter{
+      margin: 0;
     }
   }
 
@@ -1745,6 +1948,25 @@ time{
       }
       .mos3{
         margin: 0 15px 0 0;
+      }
+    }
+  }
+
+  .single{
+    article{
+      > div{
+        .attachment-msc{
+          display: block;
+          float: none;
+          padding: 0 0 20px;
+          margin: 0;
+        }
+      }
+      .btn{
+        margin-top: 10px;
+        float: none;
+        display: block;
+        width: 180px;
       }
     }
   }
@@ -1796,6 +2018,11 @@ time{
       width: 135px;
     }
   }
+
+  #comments{
+    .w50{
+      width: 255px;
+    }  }
 
 }
 
