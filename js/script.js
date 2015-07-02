@@ -9,7 +9,8 @@ var rand, newImg, myScroll,
     avantages = $('#avantages'),
     onglets = avantages.find('.avantages > li'),
     pack = $('.packery'),
-    detail = $('#dContent');
+    detail = $('#dContent'),
+    txtComment = '';
 
 
 
@@ -132,7 +133,8 @@ function animMosaique(){
 function openPartners(){
     pack.packery({ itemSelector: '.part', gutter: 19}).on( 'click keypress', '.part', function(event){
         if(event.which === 13 || event.type === 'click'){
-            $('html, body').delay(300).animate({scrollTop: $(this).offset().top - 50 }, 600);
+            var offsetTop = $(window).width() > 1040 ? 140 : 50;
+            $('html, body').delay(300).animate({scrollTop: $(this).offset().top - offsetTop }, 600);
             $(this).addClass('open').siblings().removeClass('open');
             pack.packery();
         }
@@ -234,6 +236,28 @@ $(function(){
     } 
 
     if($('#map').length) google.maps.event.addDomListener(window, 'load', initMap);
+
+    $('#comment').on('click', function(){
+        txtComment = $(this).html();
+        $(this).html('').on('focusout', function(){
+            if($(this).html() === ''){
+                $(this).html(txtComment);
+            }
+        });
+    });
+
+    if($('html').hasClass('lt-ie10')){
+        if($('#comment').length){
+            var inputs = [$('#author'), $('#email'), $('#url')], inputsLength = inputs.length, i = 0;
+
+            for(i; i<inputsLength; i++){
+                inputs[i].attr('value', inputs[i].attr('placeholder')).on('click', function(){
+                    $(this).attr('value', '');
+                });
+            }
+            
+        }
+    }
 
     $(document).scroll(function() {
         myScroll = $(this).scrollTop();
